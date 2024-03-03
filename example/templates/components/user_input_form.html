@@ -1,0 +1,11 @@
+<!-- example/templates/example/user_input_form.html -->
+<html>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="bmi">Enter your BMI:</label><br>
+        <input type="text" id="bmi" name="bmi"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
