@@ -11,6 +11,12 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+import dotenv
+
+# Load the .env file
+dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+dotenv.load_dotenv(dotenv_path)
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vercel_app.settings')
 
 app = get_wsgi_application()
