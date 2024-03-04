@@ -1,3 +1,8 @@
+## Description
+Note that pushing to the main branch will automatically deploy the changes to the vercel server.
+Make branches for features first. Go to branch feature/front-end first.
+Website can be accessed here: https://empathy-depression.vercel.app/
+
 ## How to Run locally
 1. Create a venv and install the requirements
 ```bash
