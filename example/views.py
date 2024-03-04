@@ -7,6 +7,21 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import os
 
+from joblib import load
+from collections import Counter
+
+import pandas as pd
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.ensemble import RandomForestClassifier
+import xgboost as xgb
+
+
+# Load the model from the file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_1 = load(os.path.join(current_dir, 'models', 'model_1.joblib')) # BernoulliNB
+model_2 = load(os.path.join(current_dir, 'models', 'model_2.joblib')) # RandomForestClassifier
+model_3 = load(os.path.join(current_dir, 'models', 'model_3.joblib')) # xgb.XGBClassifier
+
 
 def index(request):
     now = datetime.now()
@@ -43,11 +58,20 @@ def process_input(request):
         
         # Process the BMI through your machine learning model
         # For now, let's assume your model's prediction is stored in a variable 'prediction'
-        #prediction = your_model.predict([[bmi]])  # Replace with actual model logic
-        prediction = [1]
+        # prediction_1 = model_1.predict(df1)
+        # prediction_2 = model_2.predict(df2)
+        # prediction_3 = model_3.predict(df3)
 
+        # print(prediction_1, prediction_2, prediction_3)
+        
+        # all_predictions = prediction_1 + prediction_2 + prediction_3
+        # prediction_counts = Counter(all_predictions)
+        # majority_class = max(prediction_counts, key=prediction_counts.get)
+        # result = "depressed" if majority_class == 1 else "not depressed"
+
+        result = "yesssss"
         response = {
-            "is_depressed": "Yes" if prediction[0] == 1 else "No"
+            "is_depressed": result
         }
         return JsonResponse(response)
     
