@@ -59,7 +59,7 @@ def process_input(request):
     if request.method == "POST":
         data = json.loads(request.body)
         bmi = data.get("bmi")
-        
+
         result = prediction_from_models()
         response = {"is_depressed": result}
         return JsonResponse(response)
@@ -102,7 +102,7 @@ def prediction_from_models():
 
 
 def prediction_from_model_1(user_input):
-        # DataFrames with exact column names for each model
+    # DataFrames with exact column names for each model
     df1_columns = [
         "school_year",
         "age",
@@ -168,7 +168,9 @@ def prediction_from_model_1(user_input):
         df1.loc[0, column] = 1 if user_input["depression_severity"] == severity else 0
 
     # Binary columns based on user input
-    df1.loc[0, "depressiveness_True"] = 1 if user_input["depressiveness"] == "Yes" else 0
+    df1.loc[0, "depressiveness_True"] = (
+        1 if user_input["depressiveness"] == "Yes" else 0
+    )
     df1.loc[0, "suicidal_True"] = 1 if user_input["suicidal"] == "Yes" else 0
     df1.loc[0, "depression_treatment_True"] = (
         1 if user_input["depression_treatment"] == "Yes" else 0
@@ -220,26 +222,36 @@ def prediction_from_model_2(user_input):
     df2 = pd.DataFrame(columns=df2_columns, data=[{col: 0 for col in df2_columns}])
 
     # Filling out the DataFrame for Model 2
-    df2.loc[0, 'Age'] = user_input['age']
-    df2.loc[0, 'SleepPerDayHours'] = user_input['sleep_hours']
-    df2.loc[0, 'NumberOfFriend'] = user_input['number_of_friends']
-    df2.loc[0, 'Gender_Male'] = 1 if user_input['gender'] == 'Male' else 0
+    df2.loc[0, "Age"] = user_input["age"]
+    df2.loc[0, "SleepPerDayHours"] = user_input["sleep_hours"]
+    df2.loc[0, "NumberOfFriend"] = user_input["number_of_friends"]
+    df2.loc[0, "Gender_Male"] = 1 if user_input["gender"] == "Male" else 0
 
-    df2.loc[0, 'TakingNoteInClass_Sometimes'] = 1 if user_input['note_taking'] == 'Sometimes' else 0
-    df2.loc[0, 'TakingNoteInClass_Yes'] = 1 if user_input['note_taking'] == 'Yes' else 0
+    df2.loc[0, "TakingNoteInClass_Sometimes"] = (
+        1 if user_input["note_taking"] == "Sometimes" else 0
+    )
+    df2.loc[0, "TakingNoteInClass_Yes"] = 1 if user_input["note_taking"] == "Yes" else 0
 
-    df2.loc[0, 'FaceChallangesToCompleteAcademicTask_Sometimes'] = 1 if user_input['academic_challenges'] == 'Sometimes' else 0
-    df2.loc[0, 'FaceChallangesToCompleteAcademicTask_Yes'] = 1 if user_input['academic_challenges'] == 'Yes' else 0
+    df2.loc[0, "FaceChallangesToCompleteAcademicTask_Sometimes"] = (
+        1 if user_input["academic_challenges"] == "Sometimes" else 0
+    )
+    df2.loc[0, "FaceChallangesToCompleteAcademicTask_Yes"] = (
+        1 if user_input["academic_challenges"] == "Yes" else 0
+    )
 
-    df2.loc[0, 'LikePresentation_Yes'] = 1 if user_input['likes_presentations'] == 'Yes' else 0
+    df2.loc[0, "LikePresentation_Yes"] = (
+        1 if user_input["likes_presentations"] == "Yes" else 0
+    )
 
-    df2.loc[0, 'LikeNewThings_Yes'] = 1 if user_input['likes_new_things'] == 'Yes' else 0
+    df2.loc[0, "LikeNewThings_Yes"] = (
+        1 if user_input["likes_new_things"] == "Yes" else 0
+    )
 
     # Inferring AcademicPerformance fields based on user input, assuming one is selected
     academic_performance_options = [
         "AcademicPerformance_Below average",
         "AcademicPerformance_Excellent",
-        "AcademicPerformance_Good"
+        "AcademicPerformance_Good",
     ]
     # Assuming the user input is "Good" for the demo; update this based on actual user input
     selected_academic_performance = "AcademicPerformance_Good"
@@ -260,17 +272,19 @@ def prediction_from_model_3(user_input):
         "Feeling anxious",
         "Feeling of guilt",
     ]
-    
+
     df3 = pd.DataFrame(columns=df3_columns, data=[{col: 0 for col in df3_columns}])
 
     # Filling out the DataFrame for Model 3
-    df3.loc[0, 'Age'] = user_input['age']
-    df3.loc[0, 'Feeling sad or Tearful'] = user_input['feeling_sad']
-    df3.loc[0, 'Trouble sleeping at night'] = user_input['trouble_sleeping']
-    df3.loc[0, 'Problems concentrating or making decision'] = user_input['problems_concentrating']
-    df3.loc[0, 'Overeating or loss of appetite'] = user_input['overeating']
-    df3.loc[0, 'Feeling anxious'] = user_input['feeling_anxious']
-    df3.loc[0, 'Feeling of guilt'] = user_input['feeling_guilt']
+    df3.loc[0, "Age"] = user_input["age"]
+    df3.loc[0, "Feeling sad or Tearful"] = user_input["feeling_sad"]
+    df3.loc[0, "Trouble sleeping at night"] = user_input["trouble_sleeping"]
+    df3.loc[0, "Problems concentrating or making decision"] = user_input[
+        "problems_concentrating"
+    ]
+    df3.loc[0, "Overeating or loss of appetite"] = user_input["overeating"]
+    df3.loc[0, "Feeling anxious"] = user_input["feeling_anxious"]
+    df3.loc[0, "Feeling of guilt"] = user_input["feeling_guilt"]
 
     # Predict using the model
     return model_3.predict(df3)
