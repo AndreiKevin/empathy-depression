@@ -42,7 +42,7 @@ export const CardStack = ({
 
 	return (
 		<>
-			<Button onClick={onClickHandler}>Flip Cards</Button>
+			<Button type="button" onClick={onClickHandler}>Flip Cards</Button>
 			<div className="relative h-60 w-60 md:h-60 md:w-96">
 				{cards.map((card, index) => {
 					return (
