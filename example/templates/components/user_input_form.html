@@ -1,11 +1,454 @@
-<!-- example/templates/example/user_input_form.html -->
+<!DOCTYPE html>
 <html>
-<body>
-    <form method="post">
-        {% csrf_token %}
-        <label for="bmi">Enter your BMI:</label><br>
-        <input type="text" id="bmi" name="bmi"><br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
+	<head>
+		<title>User Information Form</title>
+	</head>
+	<body>
+		<form method="POST">
+			{% csrf_token %}
+			<h2>User Information</h2>
+
+			<label>Gender:</label><br />
+			<input type="radio" id="male" name="gender" value="Male" />
+			<label for="male">Male</label><br />
+			<input type="radio" id="female" name="gender" value="Female" />
+			<label for="female">Female</label><br /><br />
+
+			<label>Age:</label><br />
+			<input type="number" name="age" min="20" max="25" step="1" /><br /><br />
+
+			<label>School Year:</label><br />
+			<input type="radio" id="year1" name="school_year" value="1" /><label
+				for="year1"
+				>1</label
+			><br />
+			<input type="radio" id="year2" name="school_year" value="2" /><label
+				for="year2"
+				>2</label
+			><br />
+			<input type="radio" id="year3" name="school_year" value="3" /><label
+				for="year3"
+				>3</label
+			><br />
+			<input type="radio" id="year4" name="school_year" value="4" /><label
+				for="year4"
+				>4</label
+			><br /><br />
+
+			<label>Sleep Hours:</label><br />
+			<input
+				type="number"
+				name="sleep_hours"
+				min="4"
+				max="12"
+				step="1"
+			/><br /><br />
+
+			<label>Number of Friends:</label><br />
+			<input
+				type="number"
+				name="number_of_friends"
+				min="0"
+				max="100"
+				step="1"
+			/><br /><br />
+
+			<label>PHQ Score:</label><br />
+			<input
+				type="number"
+				name="phq_score"
+				min="0"
+				max="24"
+				step="1"
+			/><br /><br />
+
+			<label>GAD Score:</label><br />
+			<input
+				type="number"
+				name="gad_score"
+				min="0"
+				max="21"
+				step="1"
+			/><br /><br />
+
+			<label>Epworth Score:</label><br />
+			<input
+				type="number"
+				name="epworth_score"
+				min="0"
+				max="32"
+				step="0.1"
+			/><br /><br />
+
+			<label>BMI:</label><br />
+			<input
+				type="number"
+				name="bmi"
+				min="0"
+				max="54.55"
+				step="0.1"
+			/><br /><br />
+
+			<!-- Boolean Questions -->
+			<label>Depressiveness:</label><br />
+			<input
+				type="radio"
+				id="depressivenessYes"
+				name="depressiveness"
+				value="Yes"
+			/>
+			<label for="depressivenessYes">Yes</label><br />
+			<input
+				type="radio"
+				id="depressivenessNo"
+				name="depressiveness"
+				value="No"
+			/>
+			<label for="depressivenessNo">No</label><br /><br />
+
+			<label>Suicidal:</label><br />
+			<input type="radio" id="suicidalYes" name="suicidal" value="Yes" />
+			<label for="suicidalYes">Yes</label><br />
+			<input type="radio" id="suicidalNo" name="suicidal" value="No" />
+			<label for="suicidalNo">No</label><br /><br />
+
+			<label>Depression Treatment:</label><br />
+			<input
+				type="radio"
+				id="depressionTreatmentYes"
+				name="depression_treatment"
+				value="Yes"
+			/>
+			<label for="depressionTreatmentYes">Yes</label><br />
+			<input
+				type="radio"
+				id="depressionTreatmentNo"
+				name="depression_treatment"
+				value="No"
+			/>
+			<label for="depressionTreatmentNo">No</label><br /><br />
+
+			<label>Anxiousness:</label><br />
+			<input type="radio" id="anxiousnessYes" name="anxiousness" value="Yes" />
+			<label for="anxiousnessYes">Yes</label><br />
+			<input type="radio" id="anxiousnessNo" name="anxiousness" value="No" />
+			<label for="anxiousnessNo">No</label><br /><br />
+
+			<label>Anxiety Diagnosis:</label><br />
+			<input
+				type="radio"
+				id="anxietyDiagnosisYes"
+				name="anxiety_diagnosis"
+				value="Yes"
+			/>
+			<label for="anxietyDiagnosisYes">Yes</label><br />
+			<input
+				type="radio"
+				id="anxietyDiagnosisNo"
+				name="anxiety_diagnosis"
+				value="No"
+			/>
+			<label for="anxietyDiagnosisNo">No</label><br /><br />
+
+			<label>Anxiety Treatment:</label><br />
+			<input
+				type="radio"
+				id="anxietyTreatmentYes"
+				name="anxiety_treatment"
+				value="Yes"
+			/>
+			<label for="anxietyTreatmentYes">Yes</label><br />
+			<input
+				type="radio"
+				id="anxietyTreatmentNo"
+				name="anxiety_treatment"
+				value="No"
+			/>
+			<label for="anxietyTreatmentNo">No</label><br /><br />
+
+			<label>Sleepiness:</label><br />
+			<input type="radio" id="sleepinessYes" name="sleepiness" value="Yes" />
+			<label for="sleepinessYes">Yes</label><br />
+			<input type="radio" id="sleepinessNo" name="sleepiness" value="No" />
+			<label for="sleepinessNo">No</label><br /><br />
+
+			<label>Likes Presentations:</label><br />
+			<input
+				type="radio"
+				id="likesPresentationsYes"
+				name="likes_presentations"
+				value="Yes"
+			/>
+			<label for="likesPresentationsYes">Yes</label><br />
+			<input
+				type="radio"
+				id="likesPresentationsNo"
+				name="likes_presentations"
+				value="No"
+			/>
+			<label for="likesPresentationsNo">No</label><br /><br />
+
+			<label>Likes New Things:</label><br />
+			<input
+				type="radio"
+				id="likesNewThingsYes"
+				name="likes_new_things"
+				value="Yes"
+			/>
+			<label for="likesNewThingsYes">Yes</label><br />
+			<input
+				type="radio"
+				id="likesNewThingsNo"
+				name="likes_new_things"
+				value="No"
+			/>
+			<label for="likesNewThingsNo">No</label><br /><br />
+
+			<label>Feeling Anxious:</label><br />
+			<input
+				type="radio"
+				id="feelingAnxiousSometimes"
+				name="feeling_anxious"
+				value="1"
+			/>
+			<label for="feelingAnxiousSometimes">Often/Always</label><br />
+			<input
+				type="radio"
+				id="feelingAnxiousRarely"
+				name="feeling_anxious"
+				value="0"
+			/>
+			<label for="feelingAnxiousRarely">Rarely/Sometimes</label><br />
+
+			<label>Depression Severity:</label><br />
+			<input
+				type="radio"
+				id="depressionSeverityNone"
+				name="depression_severity"
+				value="None-minimal"
+			/>
+			<label for="depressionSeverityNone">None/Minimal</label><br />
+			<input
+				type="radio"
+				id="depressionSeverityModerate"
+				name="depression_severity"
+				value="Moderate"
+			/>
+			<label for="depressionSeverityModerate">Moderate</label><br />
+			<input
+				type="radio"
+				id="depressionSeverityModeratelySevere"
+				name="depression_severity"
+				value="Moderately severe"
+			/>
+			<label for="depressionSeverityModeratelySevere">Moderately severe</label
+			><br />
+			<input
+				type="radio"
+				id="depressionSeveritySevere"
+				name="depression_severity"
+				value="Severe"
+			/>
+			<label for="depressionSeveritySevere">Severe</label><br /><br />
+
+			<label>Anxiety Severity:</label><br />
+			<input
+				type="radio"
+				id="anxietySeverityMild"
+				name="anxiety_severity"
+				value="Mild"
+			/>
+			<label for="anxietySeverityMild">Mild</label><br />
+			<input
+				type="radio"
+				id="anxietySeverityModerate"
+				name="anxiety_severity"
+				value="Moderate"
+			/>
+			<label for="anxietySeverityModerate">Moderate</label><br />
+			<input
+				type="radio"
+				id="anxietySeverityNoneMinimal"
+				name="anxiety_severity"
+				value="None-minimal"
+			/>
+			<label for="anxietySeverityNoneMinimal">None-minimal</label><br />
+			<input
+				type="radio"
+				id="anxietySeveritySevere"
+				name="anxiety_severity"
+				value="Severe"
+			/>
+			<label for="anxietySeveritySevere">Severe</label><br /><br />
+
+			<label>Note Taking:</label><br />
+			<input
+				type="radio"
+				id="noteTakingSometimes"
+				name="note_taking"
+				value="Sometimes"
+			/>
+			<label for="noteTakingSometimes">Rarely/Sometimes</label><br />
+			<input
+				type="radio"
+				id="noteTakingAlways"
+				name="note_taking"
+				value="Always"
+			/>
+			<label for="noteTakingAlways">Often/Always</label><br /><br />
+
+			<label>Academic Challenges:</label><br />
+			<input
+				type="radio"
+				id="academicChallengesNo"
+				name="academic_challenges"
+				value="No"
+			/>
+			<label for="academicChallengesNo">Rarely/Sometimes</label><br /><br />
+			<input
+				type="radio"
+				id="academicChallengesYes"
+				name="academic_challenges"
+				value="Yes"
+			/>
+			<label for="academicChallengesYes">Often/Always</label><br />
+
+			<label>Feeling Sad:</label><br />
+			<input type="radio" id="feelingSadRarely" name="feeling_sad" value="0" />
+			<label for="feelingSadRarely">Rarely/Sometimes</label><br />
+			<input
+				type="radio"
+				id="feelingSadSometimes"
+				name="feeling_sad"
+				value="1"
+			/>
+			<label for="feelingSadSometimes">Often</label><br />
+			<input type="radio" id="feelingSadOften" name="feeling_sad" value="2" />
+			<label for="feelingSadOften">Always</label><br /><br />
+
+			<label>Trouble Sleeping:</label><br />
+			<input
+				type="radio"
+				id="troubleSleepingRarely"
+				name="trouble_sleeping"
+				value="0"
+			/>
+			<label for="troubleSleepingRarely">Rarely</label><br />
+			<input
+				type="radio"
+				id="troubleSleepingSometimes"
+				name="trouble_sleeping"
+				value="1"
+			/>
+			<label for="troubleSleepingSometimes">Sometimes</label><br />
+			<input
+				type="radio"
+				id="troubleSleepingOften"
+				name="trouble_sleeping"
+				value="2"
+			/>
+			<label for="troubleSleepingOften">Often</label><br /><br />
+
+			<label>Overeating:</label><br />
+			<input type="radio" id="overeatingRarely" name="overeating" value="0" />
+			<label for="overeatingRarely">Rarely</label><br />
+			<input
+				type="radio"
+				id="overeatingSometimes"
+				name="overeating"
+				value="1"
+			/>
+			<label for="overeatingSometimes">Sometimes</label><br />
+			<input type="radio" id="overeatingOften" name="overeating" value="2" />
+			<label for="overeatingOften">Often</label><br /><br />
+
+			<label>Feeling Guilt:</label><br />
+			<input
+				type="radio"
+				id="feelingGuiltRarely"
+				name="feeling_guilt"
+				value="0"
+			/>
+			<label for="feelingGuiltRarely">Rarely</label><br />
+			<input
+				type="radio"
+				id="feelingGuiltSometimes"
+				name="feeling_guilt"
+				value="1"
+			/>
+			<label for="feelingGuiltSometimes">Sometimes</label><br />
+			<input
+				type="radio"
+				id="feelingGuiltOften"
+				name="feeling_guilt"
+				value="2"
+			/>
+			<label for="feelingGuiltOften">Often</label><br />
+			<input
+				type="radio"
+				id="feelingGuiltAlways"
+				name="feeling_guilt"
+				value="3"
+			/>
+			<label for="feelingGuiltAlways">Always</label><br /><br />
+
+			<label>Problems Concentrating:</label><br />
+			<input
+				type="radio"
+				id="problemsConcentratingRarely"
+				name="problems_concentrating"
+				value="0"
+			/>
+			<label for="problemsConcentratingRarely">Rarely</label><br />
+			<input
+				type="radio"
+				id="problemsConcentratingSometimes"
+				name="problems_concentrating"
+				value="1"
+			/>
+			<label for="problemsConcentratingSometimes">Sometimes</label><br />
+			<input
+				type="radio"
+				id="problemsConcentratingOften"
+				name="problems_concentrating"
+				value="2"
+			/>
+			<label for="problemsConcentratingOften">Often</label><br />
+			<input
+				type="radio"
+				id="problemsConcentratingAlways"
+				name="problems_concentrating"
+				value="3"
+			/>
+			<label for="problemsConcentratingAlways">Always</label><br /><br />
+
+			<input type="submit" value="Submit" />
+		</form>
+		<script>
+			document
+				.querySelector("form")
+				.addEventListener("submit", function (event) {
+					event.preventDefault();
+
+					let formData = new FormData(event.target);
+					let data = {};
+					for (let [key, value] of formData.entries()) {
+						data[key] = value;
+					}
+
+					fetch("/result/", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(data),
+					})
+						.then(response => response.text())
+                        .then(html => {
+                        // Replace the current page content with the new HTML
+                        document.documentElement.innerHTML = html;
+                    })
+                });
+		</script>
+	</body>
 </html>
