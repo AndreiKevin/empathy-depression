@@ -33,7 +33,6 @@ def index(request):
 # Backend
 @csrf_exempt
 def result(request):
-    print(request.body)
     if request.method == "POST":
         data = json.loads(request.body)
         # infer bmi_category column
@@ -48,8 +47,25 @@ def prediction_from_models(user_input):
     #user_input = get_sample_user_input()
     print("user_input given to models:", user_input)
 
+    # cast the input to the correct data types
+    user_input["age"] = int(user_input["age"])
+    user_input["school_year"] = int(user_input["school_year"])
+    user_input["sleep_hours"] = int(user_input["sleep_hours"])
+    user_input["number_of_friends"] = int(user_input["number_of_friends"])
+    user_input["phq_score"] = int(user_input["phq_score"])
+    user_input["gad_score"] = int(user_input["gad_score"])
+    user_input["epworth_score"] = int(user_input["epworth_score"])
+    user_input["bmi"] = int(user_input["bmi"])
+    user_input["feeling_anxious"] = int(user_input["feeling_anxious"])
+    user_input["feeling_sad"] = int(user_input["feeling_sad"])
+    user_input["trouble_sleeping"] = int(user_input["trouble_sleeping"])
+    user_input["overeating"] = int(user_input["overeating"])
+    user_input["feeling_guilt"] = int(user_input["feeling_guilt"])
+    user_input["problems_concentrating"] = int(user_input["problems_concentrating"])
+
     model_1_prediction = prediction_from_model_1(user_input)
     model_2_prediction = prediction_from_model_2(user_input)
+    # https://www.kaggle.com/datasets/parvezalmuqtadir2348/postpartum-depression
     model_3_prediction = prediction_from_model_3(user_input)
 
     print(model_1_prediction, model_2_prediction, model_3_prediction)
