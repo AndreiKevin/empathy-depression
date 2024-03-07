@@ -36,15 +36,17 @@ def result(request):
     print(request.body)
     if request.method == "POST":
         data = json.loads(request.body)
-        print("data:", data)
-        result = prediction_from_models(data) # TODO: convert json to python dict
+        # infer bmi_category column
+        data["bmi_category"] = categorize_bmi(data["bmi"])
+        result = prediction_from_models(data)
         return render(request, "components/result.html", {"is_depressed": result})
     else:
         return render(request, "components/user_input_form.html")
 
 
 def prediction_from_models(user_input):
-    user_input = get_sample_user_input()
+    #user_input = get_sample_user_input()
+    print("user_input given to models:", user_input)
 
     model_1_prediction = prediction_from_model_1(user_input)
     model_2_prediction = prediction_from_model_2(user_input)
@@ -57,6 +59,30 @@ def prediction_from_models(user_input):
     majority_class = max(prediction_counts, key=prediction_counts.get)
     return "depressed" if majority_class == 1 else "not depressed"
 
+
+def categorize_bmi(bmi=None):
+    if bmi is None:
+        return "Not Available"
+    
+    bmi = int(bmi)
+
+    if bmi < 0:
+        return "Not Available"
+    elif bmi < 18.5:
+        return "Underweight"
+    elif 18.5 <= bmi <= 24.9:
+        return "Normal"
+    elif 25 <= bmi <= 29.9:
+        return "Overweight"
+    elif 30 <= bmi <= 34.9:
+        return "Class II Obesity"  # Assuming Class I Obesity is grouped here
+    elif 35 <= bmi <= 39.9:
+        return "Class II Obesity"
+    elif bmi >= 40:
+        return "Class III Obesity"
+    else:
+        return "Not Available"
+    
 
 def prediction_from_model_1(user_input):
     # DataFrames with exact column names for each model
