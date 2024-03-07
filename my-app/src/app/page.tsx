@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import React from "react";
-import { BackgroundBeams } from "@/app/ui/background-beams";
-import { CardStack } from "@/app/ui/card-stack";
-import { cn } from "@/app/utils/cn";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { CardStack } from "@/components/ui/card-stack";
+import { cn } from "@/lib/utils/cn";
 
 export const Highlight = ({
 	children,
@@ -66,11 +66,15 @@ const CARDS = [
 	},
 ];
 
+const onNextClickHandler = () => {
+  console.log("Next question clicked");
+};
+
 export default function Home() {
 	return (
 		<div className="dark">
 			<div className="h-[40rem] flex items-center justify-center w-full">
-				<CardStack items={CARDS} />
+				<CardStack items={CARDS} onCardClick={onNextClickHandler} />
 			</div>
 			<BackgroundBeams />
 		</div>
