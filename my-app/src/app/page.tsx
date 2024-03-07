@@ -72,7 +72,7 @@ const onNextClickHandler = () => {
 
 export default function Home() {
 	return (
-		<div className="dark">
+		<div className="">
 			<div className="h-[40rem] flex items-center justify-center w-full">
 				<CardStack items={CARDS} onCardClick={onNextClickHandler} />
 			</div>
