@@ -1,4 +1,3 @@
-from datetime import datetime
 import json
 import requests
 from django.http import HttpResponse, HttpResponseRedirect
@@ -28,65 +27,23 @@ model_3 = load(
 
 
 def index(request):
-    now = datetime.now()
-    html = f"""
-    <html>
-        <body>
-            <h1>Hello from Vercel!</h1>
-            <p>The current time is { now }.</p>
-        </body>
-    </html>
-    """
-    return HttpResponse(html)
+    return render(request, "components/user_input_form.html")
 
 
-def get_user_input(request):
+# Backend
+@csrf_exempt
+def result(request):
+    print(request.body)
     if request.method == "POST":
-        # Assuming there's a form with a 'bmi' field
-        bmi = request.POST.get("bmi")
-        # You can add more fields as necessary
-
-        # Redirect to a new URL to process the input and display the result
-        return HttpResponseRedirect("/result/?bmi=" + bmi)
-
-    # If a GET (or any other method) we'll create a blank form
+        data = json.loads(request.body)
+        print("data:", data)
+        result = prediction_from_models(data) # TODO: convert json to python dict
+        return render(request, "components/result.html", {"is_depressed": result})
     else:
         return render(request, "components/user_input_form.html")
 
 
-@csrf_exempt
-def process_input(request):
-    if request.method == "POST":
-        data = json.loads(request.body)
-        bmi = data.get("bmi")
-
-        result = prediction_from_models()
-        response = {"is_depressed": result}
-        return JsonResponse(response)
-
-
-def submit_to_api(request, bmi):
-    BASE_URL = os.getenv("BASE_API_URL")
-
-    url = f"{BASE_URL}/api/process_input"
-    data = {"bmi": bmi}
-    response = requests.post(url, json=data, timeout=15)
-
-    if response.status_code != 200:
-        # Log the error or handle it accordingly
-        print(f"Error: {response.text}")
-        return None
-
-    return response.json()
-
-
-def result(request):
-    bmi = request.GET.get("bmi")
-    result = submit_to_api(request, bmi)
-    return render(request, "components/result.html", {"result": result})
-
-
-def prediction_from_models():
+def prediction_from_models(user_input):
     user_input = get_sample_user_input()
 
     model_1_prediction = prediction_from_model_1(user_input)
