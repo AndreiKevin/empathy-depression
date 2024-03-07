@@ -5,7 +5,6 @@ from example.views import index, result
 
 
 urlpatterns = [
-    # path('', index),
     path('', index),
     path('result/', result, name='result'),
 ]
