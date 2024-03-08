@@ -11,6 +11,7 @@ export type Card = {
 	question: string;
 	inputType: string;
 	feature_name: string; // name of the column in the machine learning model
+	done: boolean; // flag if the question has already been answer
 	options?: {label:string, value:string}[]; // label--displayed to the user, value--sent to the server
 };
 
@@ -81,8 +82,9 @@ export const CardStack = ({
 		}
 	};
 
-	const nextCardHandler = () => {
+	const nextCardHandler = (card:Card) => {
 		if (currentCardIndex < items.length - 1) {
+			card.done = true;
 			startFlipping();
 			setCurrentCardIndex(currentCardIndex + 1);
 		} else {
@@ -104,6 +106,7 @@ export const CardStack = ({
 		<>
 			<div className="relative h-60 w-60 md:h-60 md:w-96">
 				{cards.map((card, index) => {
+					if (!card.done) {
 						return (
 							<motion.div
 								key={card.id}
@@ -119,11 +122,11 @@ export const CardStack = ({
 							>
 								<h3 className="mt-2 mb-5">{card.question}</h3>
 								{renderInputField(card)}
-								<Button className="mt-auto" type="button" onClick={nextCardHandler}>
+								<Button className="mt-auto" type="button" onClick={() => nextCardHandler(card)}>
 									{currentCardIndex < items.length - 1 ? "Next" : "Submit"}
 								</Button>
 							</motion.div>
-						);
+						)}
 					})}
 			</div>
 		</>

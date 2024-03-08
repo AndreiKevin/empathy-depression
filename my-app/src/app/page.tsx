@@ -31,13 +31,15 @@ const CARDS:Card[] = [
         question: "Gender",
         inputType: "radio",
         feature_name: "gender",
-        options: [{label: "Male", value: "Male"}, {label: "Female", value: "Female"}]
+        options: [{label: "Male", value: "Male"}, {label: "Female", value: "Female"}],
+		done: false
     },
     {
         id: 2,
         question: "Age",
         inputType: "number",
-        feature_name: "age"
+        feature_name: "age",
+		done: false
     },
     {
         id: 3,
@@ -49,106 +51,122 @@ const CARDS:Card[] = [
             {label: "2", value: "2"}, 
             {label: "3", value: "3"}, 
             {label: "4", value: "4"}
-        ]
+        ],
+		done: false
     },
     {
         id: 4,
         question: "Sleep Hours",
         inputType: "number",
-        feature_name: "sleep_hours"
+        feature_name: "sleep_hours",
+		done: false
     },
     {
         id: 5,
         question: "Number of Friends",
         inputType: "number",
-        feature_name: "number_of_friends"
+        feature_name: "number_of_friends",
+		done: false
     },
     {
         id: 6,
         question: "PHQ Score",
         inputType: "number",
-        feature_name: "phq_score"
+        feature_name: "phq_score",
+		done: false
     },
     {
         id: 7,
         question: "GAD Score",
         inputType: "number",
-        feature_name: "gad_score"
+        feature_name: "gad_score",
+		done: false
     },
     {
         id: 8,
         question: "Epworth Score",
         inputType: "number",
-        feature_name: "epworth_score"
+        feature_name: "epworth_score",
+		done: false
     },
     {
         id: 9,
         question: "BMI",
         inputType: "number",
-        feature_name: "bmi"
+        feature_name: "bmi",
+		done: false
     },
     {
         id: 10,
         question: "Depressiveness",
         inputType: "radio",
         feature_name: "depressiveness",
-        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
     },
     {
         id: 11,
         question: "Suicidal",
         inputType: "radio",
         feature_name: "suicidal",
-        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
     },
     {
         id: 12,
         question: "Depression Treatment",
         inputType: "radio",
         feature_name: "depression_treatment",
-        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
     },
 	{
 		id: 13,
 		question: "Anxiousness",
 		inputType: "radio",
 		feature_name: "anxiousness",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
 	},
 	{
 		id: 14,
 		question: "Anxiety Diagnosis",
 		inputType: "radio",
 		feature_name: "anxiety_diagnosis",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
 	},
 	{
 		id: 15,
 		question: "Anxiety Treatment",
 		inputType: "radio",
 		feature_name: "anxiety_treatment",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
 	},
 	{
 		id: 16,
 		question: "Sleepiness",
 		inputType: "radio",
 		feature_name: "sleepiness",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
 	},
 	{
 		id: 17,
 		question: "Likes Presentations",
 		inputType: "radio",
 		feature_name: "likes_presentations",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
 	},
 	{
 		id: 18,
 		question: "Likes New Things",
 		inputType: "radio",
 		feature_name: "likes_new_things",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
+		done: false
 	},
 	{
 		id: 19,
@@ -158,7 +176,8 @@ const CARDS:Card[] = [
 		options: [
 			{label: "Often/Always", value: "1"}, 
 			{label: "Rarely/Sometimes", value: "0"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 20,
@@ -170,7 +189,8 @@ const CARDS:Card[] = [
 			{label: "Moderate", value: "Moderate"}, 
 			{label: "Moderately severe", value: "Moderately severe"}, 
 			{label: "Severe", value: "Severe"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 21,
@@ -182,7 +202,8 @@ const CARDS:Card[] = [
 			{label: "Moderate", value: "Moderate"}, 
 			{label: "None-minimal", value: "None-minimal"}, 
 			{label: "Severe", value: "Severe"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 22,
@@ -192,7 +213,8 @@ const CARDS:Card[] = [
 		options: [
 			{label: "Rarely/Sometimes", value: "Sometimes"}, 
 			{label: "Often/Always", value: "Always"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 23,
@@ -202,7 +224,8 @@ const CARDS:Card[] = [
 		options: [
 			{label: "Rarely/Sometimes", value: "No"}, 
 			{label: "Often/Always", value: "Yes"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 24,
@@ -213,7 +236,8 @@ const CARDS:Card[] = [
 			{label: "Rarely/Sometimes", value: "0"}, 
 			{label: "Often", value: "1"}, 
 			{label: "Always", value: "2"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 25,
@@ -224,7 +248,8 @@ const CARDS:Card[] = [
 			{label: "Rarely", value: "0"}, 
 			{label: "Sometimes", value: "1"}, 
 			{label: "Often", value: "2"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 26,
@@ -235,7 +260,8 @@ const CARDS:Card[] = [
 			{label: "Rarely", value: "0"}, 
 			{label: "Sometimes", value: "1"}, 
 			{label: "Often", value: "2"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 27,
@@ -247,7 +273,8 @@ const CARDS:Card[] = [
 			{label: "Sometimes", value: "1"}, 
 			{label: "Often", value: "2"}, 
 			{label: "Always", value: "3"}
-		]
+		],
+		done: false
 	},
 	{
 		id: 28,
@@ -259,7 +286,8 @@ const CARDS:Card[] = [
 			{label: "Sometimes", value: "1"}, 
 			{label: "Often", value: "2"}, 
 			{label: "Always", value: "3"}
-		]
+		],
+		done: false
 	}	
 ];
 
