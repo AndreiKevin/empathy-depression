@@ -93,7 +93,9 @@ export const CardStack = ({
 	const startFlipping = () => {
 		setCards((prevCards: Card[]) => {
 			const newArray = [...prevCards]; // create a copy of the array
-			newArray.unshift(newArray.pop()!); // move the last element to the front
+			const nextCard = newArray[currentCardIndex + 1]; // get the next card
+			newArray.splice(currentCardIndex + 1, 1); // remove the next card from its current position
+			newArray.unshift(nextCard); // move the next card to the front
 			return newArray;
 		});
 	};

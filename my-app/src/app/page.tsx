@@ -84,7 +84,7 @@ export default function Home() {
 			<form className="h-[40rem] flex items-center justify-center w-full">
 				<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
 			</form>
-			<BackgroundBeams />
+			{/*<BackgroundBeams />*/}
 		</div>
 	);
 }
