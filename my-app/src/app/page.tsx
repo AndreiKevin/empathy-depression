@@ -51,6 +51,216 @@ const CARDS:Card[] = [
             {label: "4", value: "4"}
         ]
     },
+    {
+        id: 4,
+        question: "Sleep Hours",
+        inputType: "number",
+        feature_name: "sleep_hours"
+    },
+    {
+        id: 5,
+        question: "Number of Friends",
+        inputType: "number",
+        feature_name: "number_of_friends"
+    },
+    {
+        id: 6,
+        question: "PHQ Score",
+        inputType: "number",
+        feature_name: "phq_score"
+    },
+    {
+        id: 7,
+        question: "GAD Score",
+        inputType: "number",
+        feature_name: "gad_score"
+    },
+    {
+        id: 8,
+        question: "Epworth Score",
+        inputType: "number",
+        feature_name: "epworth_score"
+    },
+    {
+        id: 9,
+        question: "BMI",
+        inputType: "number",
+        feature_name: "bmi"
+    },
+    {
+        id: 10,
+        question: "Depressiveness",
+        inputType: "radio",
+        feature_name: "depressiveness",
+        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+    },
+    {
+        id: 11,
+        question: "Suicidal",
+        inputType: "radio",
+        feature_name: "suicidal",
+        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+    },
+    {
+        id: 12,
+        question: "Depression Treatment",
+        inputType: "radio",
+        feature_name: "depression_treatment",
+        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+    },
+	{
+		id: 13,
+		question: "Anxiousness",
+		inputType: "radio",
+		feature_name: "anxiousness",
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+	},
+	{
+		id: 14,
+		question: "Anxiety Diagnosis",
+		inputType: "radio",
+		feature_name: "anxiety_diagnosis",
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+	},
+	{
+		id: 15,
+		question: "Anxiety Treatment",
+		inputType: "radio",
+		feature_name: "anxiety_treatment",
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+	},
+	{
+		id: 16,
+		question: "Sleepiness",
+		inputType: "radio",
+		feature_name: "sleepiness",
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+	},
+	{
+		id: 17,
+		question: "Likes Presentations",
+		inputType: "radio",
+		feature_name: "likes_presentations",
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+	},
+	{
+		id: 18,
+		question: "Likes New Things",
+		inputType: "radio",
+		feature_name: "likes_new_things",
+		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}]
+	},
+	{
+		id: 19,
+		question: "Feeling Anxious",
+		inputType: "radio",
+		feature_name: "feeling_anxious",
+		options: [
+			{label: "Often/Always", value: "1"}, 
+			{label: "Rarely/Sometimes", value: "0"}
+		]
+	},
+	{
+		id: 20,
+		question: "Depression Severity",
+		inputType: "radio",
+		feature_name: "depression_severity",
+		options: [
+			{label: "None/Minimal", value: "None-minimal"}, 
+			{label: "Moderate", value: "Moderate"}, 
+			{label: "Moderately severe", value: "Moderately severe"}, 
+			{label: "Severe", value: "Severe"}
+		]
+	},
+	{
+		id: 21,
+		question: "Anxiety Severity",
+		inputType: "radio",
+		feature_name: "anxiety_severity",
+		options: [
+			{label: "Mild", value: "Mild"}, 
+			{label: "Moderate", value: "Moderate"}, 
+			{label: "None-minimal", value: "None-minimal"}, 
+			{label: "Severe", value: "Severe"}
+		]
+	},
+	{
+		id: 22,
+		question: "Note Taking",
+		inputType: "radio",
+		feature_name: "note_taking",
+		options: [
+			{label: "Rarely/Sometimes", value: "Sometimes"}, 
+			{label: "Often/Always", value: "Always"}
+		]
+	},
+	{
+		id: 23,
+		question: "Academic Challenges",
+		inputType: "radio",
+		feature_name: "academic_challenges",
+		options: [
+			{label: "Rarely/Sometimes", value: "No"}, 
+			{label: "Often/Always", value: "Yes"}
+		]
+	},
+	{
+		id: 24,
+		question: "Feeling Sad",
+		inputType: "radio",
+		feature_name: "feeling_sad",
+		options: [
+			{label: "Rarely/Sometimes", value: "0"}, 
+			{label: "Often", value: "1"}, 
+			{label: "Always", value: "2"}
+		]
+	},
+	{
+		id: 25,
+		question: "Trouble Sleeping",
+		inputType: "radio",
+		feature_name: "trouble_sleeping",
+		options: [
+			{label: "Rarely", value: "0"}, 
+			{label: "Sometimes", value: "1"}, 
+			{label: "Often", value: "2"}
+		]
+	},
+	{
+		id: 26,
+		question: "Overeating",
+		inputType: "radio",
+		feature_name: "overeating",
+		options: [
+			{label: "Rarely", value: "0"}, 
+			{label: "Sometimes", value: "1"}, 
+			{label: "Often", value: "2"}
+		]
+	},
+	{
+		id: 27,
+		question: "Feeling Guilt",
+		inputType: "radio",
+		feature_name: "feeling_guilt",
+		options: [
+			{label: "Rarely", value: "0"}, 
+			{label: "Sometimes", value: "1"}, 
+			{label: "Often", value: "2"}, 
+			{label: "Always", value: "3"}
+		]
+	},
+	{
+		id: 28,
+		question: "Problems Concentrating",
+		inputType: "radio",
+		feature_name: "problems_concentrating",
+		options: [
+			{label: "Rarely", value: "0"}, 
+			{label: "Sometimes", value: "1"}, 
+			{label: "Often", value: "2"}, 
+			{label: "Always", value: "3"}
+		]
+	}	
 ];
 
 /*
