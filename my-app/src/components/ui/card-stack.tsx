@@ -27,7 +27,7 @@ export const CardStack = ({
 	scaleFactor?: number;
 }) => {
 	const CARD_OFFSET = offset || 10;
-	const SCALE_FACTOR = scaleFactor || 0.06;
+	const SCALE_FACTOR = scaleFactor || 0.02;
 	const [cards, setCards] = useState<Card[]>(items);
 
 	const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -115,8 +115,7 @@ export const CardStack = ({
 									transformOrigin: "top center",
 								}}
 								animate={{
-									top: index * -CARD_OFFSET,
-									scale: 1 - index * SCALE_FACTOR, // decrease scale for cards that are behind
+									left: index * -CARD_OFFSET,
 									zIndex: cards.length - index, //  decrease z-index for the cards that are behind
 								}}
 							>
