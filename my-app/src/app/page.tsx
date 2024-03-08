@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { CardStack } from "@/components/ui/card-stack";
+import { CardStack, Card } from "@/components/ui/card-stack";
 import { cn } from "@/lib/utils/cn";
 
 export const Highlight = ({
@@ -25,57 +25,65 @@ export const Highlight = ({
 	);
 };
 
-const CARDS = [
-	{
-		id: 0,
-		name: "Manu Arora",
-		designation: "Senior Software Engineer",
-		content: (
-			<p>
-				These cards are amazing, <Highlight>I want to use them</Highlight> in my
-				project. Framer motion is a godsend ngl tbh fam 🙏
-			</p>
-		),
-	},
-	{
-		id: 1,
-		name: "Elon Musk",
-		designation: "Senior Shitposter",
-		content: (
-			<p>
-				I dont like this Twitter thing,{" "}
-				<Highlight>deleting it right away</Highlight> because yolo. Instead, I
-				would like to call it <Highlight>X.com</Highlight> so that it can easily
-				be confused with adult sites.
-			</p>
-		),
-	},
-	{
-		id: 2,
-		name: "Tyler Durden",
-		designation: "Manager Project Mayhem",
-		content: (
-			<p>
-				The first rule of
-				<Highlight>Fight Club</Highlight> is that you do not talk about fight
-				club. The second rule of
-				<Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-				club.
-			</p>
-		),
-	},
+const CARDS:Card[] = [
+    {
+        id: 1,
+        question: "Gender",
+        inputType: "radio",
+        feature_name: "gender",
+        options: [{label: "Male", value: "Male"}, {label: "Female", value: "Female"}]
+    },
+    {
+        id: 2,
+        question: "Age",
+        inputType: "number",
+        feature_name: "age"
+    },
+    {
+        id: 3,
+        question: "School Year",
+        inputType: "radio",
+        feature_name: "school_year",
+        options: [
+            {label: "1", value: "1"}, 
+            {label: "2", value: "2"}, 
+            {label: "3", value: "3"}, 
+            {label: "4", value: "4"}
+        ]
+    },
 ];
 
-const onNextClickHandler = () => {
-  console.log("Next question clicked");
+/*
+<input
+	type="radio" >
+	id="anxietySeverityMild" >
+	name="anxiety_severity" >
+	value="Mild"
+/>
+<label for="anxietySeverityMild">Mild</label><br />
+*/
+
+const onCardSubmit = (formData: any) => {
+	console.log("Form Data: ", formData);
+	// Post formData to an API endpoint
+	fetch("/your-api-endpoint", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(formData),
+	})
+		.then((response) => response.json())
+		.then((data) => console.log(data))
+		.catch((error) => console.error("Error:", error));
 };
 
 export default function Home() {
 	return (
 		<div className="">
-			<div className="h-[40rem] flex items-center justify-center w-full">
-				<CardStack items={CARDS} onCardClick={onNextClickHandler} />
-			</div>
+			<form className="h-[40rem] flex items-center justify-center w-full">
+				<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
+			</form>
 			<BackgroundBeams />
 		</div>
 	);
