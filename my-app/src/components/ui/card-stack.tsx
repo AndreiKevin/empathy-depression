@@ -43,7 +43,7 @@ export const CardStack = ({
 	};
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		updateFormData(items[currentCardIndex].question, event.target.value);
+		updateFormData(items[currentCardIndex].feature_name, event.target.value);
 	};
 
 	const renderInputField = (card: Card) => {
@@ -52,7 +52,8 @@ export const CardStack = ({
 				return (
 					<Input
 						type="text"
-						value={formData[card.question] || ""}
+						id={card.id.toString()}
+						name={card.feature_name}
 						onChange={handleInputChange}
 					/>
 				);
@@ -61,6 +62,8 @@ export const CardStack = ({
 					<Input
 						className="remove-arrow"
 						type="number"
+						id={card.id.toString()}
+						name={card.feature_name}
 						onChange={handleInputChange}
 					/>
 				);

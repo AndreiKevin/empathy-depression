@@ -304,7 +304,7 @@ const CARDS:Card[] = [
 const onCardSubmit = (formData: any) => {
 	console.log("Form Data: ", formData);
 	// Post formData to an API endpoint
-	fetch("/your-api-endpoint", {
+	fetch("http://127.0.0.1:8000/result/", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

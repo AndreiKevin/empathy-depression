@@ -36,11 +36,11 @@ def result(request):
     if request.method == "POST":
         data = json.loads(request.body)
         # infer bmi_category column
+        print("received data:", data)
         data["bmi_category"] = categorize_bmi(data["bmi"])
         result = prediction_from_models(data)
-        return render(request, "components/result.html", {"is_depressed": result})
-    else:
-        return render(request, "components/user_input_form.html")
+        return JsonResponse({"is_depressed": result})  # jsonify the result
+    return render(request, "components/user_input_form.html")  # remove unnecessary "else" statement
 
 
 def prediction_from_models(user_input):
