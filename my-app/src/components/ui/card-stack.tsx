@@ -92,6 +92,9 @@ export const CardStack = ({
 			setCurrentCardIndex(currentCardIndex + 1);
 		} else {
 			onCardSubmit(formData); 
+			card.done = true;
+			startFlipping();
+			setCurrentCardIndex(currentCardIndex + 1);
 		}
 	};
 
@@ -109,7 +112,7 @@ export const CardStack = ({
 		<>
 			<div className="relative h-60 w-60 md:h-60 md:w-96">
 				{cards.map((card, index) => {
-					if (!card.done) {
+					if (card && !card.done) {
 						return (
 							<motion.div
 								key={card.id}
