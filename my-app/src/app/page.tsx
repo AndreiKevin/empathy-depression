@@ -481,7 +481,9 @@ export default function Home() {
 							</h1>
 						</div>
 						<div>
-							<h3 className="text-center mt-1">Answer all the cards below</h3>
+							<h3 className="text-center mt-1">
+								Tell us about yourself. Answer the all questions honestly.
+							</h3>
 						</div>
 					</motion.div>
 					<motion.div
@@ -507,19 +509,31 @@ export default function Home() {
 						<div className="flex items-center justify-center w-full">
 							<h1 className="text-3xl font-bold text-center mt-10">
 								{data.is_depressed && data.is_depressed === "depressed"
-									? "You don't seem to be doing so well. Maybe these can help you."
+									? "You don't seem to be doing so well"
 									: "We're glad to know you are doing well!"}
 							</h1>
 						</div>
+						<div>
+							<h3 className="text-center mt-1">
+								Consider these tips to help you with your journey
+							</h3>
+						</div>
 					</motion.div>
-					<div className="mt-10 w-full">
-						<ShowResults
-							verdict={data.is_depressed}
-							items={testItems}
-							selectedId={selectedId}
-							setSelectedId={setSelectedId}
-						/>
-					</div>
+					<motion.div
+						initial={{ opacity: 0 }} // Add opacity: 0 to initial state
+						animate={{ opacity: 1 }} // Add opacity: 1 to animate state
+						transition={{ duration: 2, delay: 1.5 }} // Add delay: 1 to the transition object
+						className=""
+					>
+						<div className="mt-10 w-full">
+							<ShowResults
+								verdict={data.is_depressed}
+								items={testItems}
+								selectedId={selectedId}
+								setSelectedId={setSelectedId}
+							/>
+						</div>
+					</motion.div>
 				</>
 			)}
 			{/*<BackgroundBeams />*/}
