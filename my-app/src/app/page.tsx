@@ -8,12 +8,7 @@ import { motion } from "framer-motion";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { CardStack, Card } from "@/components/ui/card-stack";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-	IconClipboardCopy,
-	IconFileBroken,
-	IconSignature,
-	IconTableColumn,
-} from "@tabler/icons-react";
+import * as Tabler from "@tabler/icons-react";
 
 export const Highlight = ({
 	children,
@@ -355,7 +350,26 @@ type Results = {
 };
 
 const IconMapping: { [key: string]: JSX.Element } = {
-	'IconTableColumn': <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+	'IconStretching': <Tabler.IconStretching className="h-4 w-4 text-neutral-500" />,
+	'IconActivityHeartbeat': <Tabler.IconActivityHeartbeat className="h-4 w-4 text-neutral-500" />,
+	'IconUserSearch': <Tabler.IconUserSearch className="h-4 w-4 text-neutral-500" />,
+	'IconMoonStars': <Tabler.IconMoonStars className="h-4 w-4 text-neutral-500" />,
+	'IconCarrot': <Tabler.IconCarrot className="h-4 w-4 text-neutral-500" />,
+	'IconUsers': <Tabler.IconUsers className="h-4 w-4 text-neutral-500" />,
+	'IconLeaf': <Tabler.IconLeaf className="h-4 w-4 text-neutral-500" />,
+	'IconBrain': <Tabler.IconBrain className="h-4 w-4 text-neutral-500" />,
+	'IconTarget': <Tabler.IconTarget className="h-4 w-4 text-neutral-500" />,
+	'IconCalendar': <Tabler.IconCalendar className="h-4 w-4 text-neutral-500" />,
+	'IconRun': <Tabler.IconRun className="h-4 w-4 text-neutral-500" />,
+	'IconMessageCircle': <Tabler.IconMessageCircle className="h-4 w-4 text-neutral-500" />,
+	'IconDeviceFloppy': <Tabler.IconDeviceFloppy className="h-4 w-4 text-neutral-500" />,
+	'IconPalette': <Tabler.IconPalette className="h-4 w-4 text-neutral-500" />,
+	'IconGrillFork': <Tabler.IconGrillFork className="h-4 w-4 text-neutral-500" />,
+	'IconNotebook': <Tabler.IconNotebook className="h-4 w-4 text-neutral-500" />,
+	'IconHandStop': <Tabler.IconHandStop className="h-4 w-4 text-neutral-500" />,
+	'IconBulb': <Tabler.IconBulb className="h-4 w-4 text-neutral-500" />,
+	'IconBed': <Tabler.IconBed className="h-4 w-4 text-neutral-500" />,
+	'IconSun': <Tabler.IconSun className="h-4 w-4 text-neutral-500" />,
 }
 
 const ShowResults = ({

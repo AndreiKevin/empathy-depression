@@ -36,25 +36,225 @@ def evaluate_recommendations(user_input):
             "id": "1",
             "title": "Master Stress Management",
             "description": "Learn and practice stress management techniques such as mindfulness, meditation, or yoga to improve your mental health and enhance your overall well-being.",
-            "icon": "IconTableColumn",
+            "icon": "IconActivityHeartbeat",
             "url": "https://www.google.com/",
             "trigger": [
                 {"label": "feeling_anxious", "value": "1"},
-                {"label": "phq_score", "value": ">10"}
-            ]
+                {"label": "phq_score", "value": ">10"},
+            ],
         },
         {
             "id": "2",
             "title": "Engage in Regular Exercise",
             "description": "Regular physical activity can significantly improve your mental health, reduce anxiety and depression levels, and elevate your mood. Aim for at least 30 minutes of moderate exercise most days of the week.",
-            "icon": "IconTableColumn",
+            "icon": "IconStretching",
             "url": "https://www.google.com/",
             "trigger": [
                 {"label": "bmi", "value": ">25"},
-                {"label": "depressiveness", "value": "Yes"}
-            ]
+                {"label": "depressiveness", "value": "Yes"},
+            ],
         },
-        # Add the rest of the recommendations following the same structure.
+        {
+            "id": "3",
+            "title": "Seek Professional Mental Health Support",
+            "description": "If you're experiencing signs of depressiveness, anxiety, or suicidal thoughts, it's important to seek help from a mental health professional. They can offer guidance, therapy, and sometimes medication to help you manage your mental health effectively.",
+            "icon": "IconUserSearch",
+            "url": "https://www.mentalhealth.gov/get-help/immediate-help",
+            "trigger": [
+                {"label": "depressiveness", "value": "Yes"},
+                {"label": "suicidal", "value": "Yes"},
+                {"label": "anxiety_diagnosis", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "4",
+            "title": "Improve Your Sleep Hygiene",
+            "description": "Good sleep is crucial for mental health. Develop a bedtime routine, limit screen time before bed, and create a comfortable sleep environment. Consider seeking professional advice if you frequently have trouble sleeping.",
+            "icon": "IconMoon",
+            "url": "https://www.sleepfoundation.org/sleep-hygiene",
+            "trigger": [
+                {"label": "sleep_hours", "value": "<7"},
+                {"label": "epworth_score", "value": ">10"},
+                {"label": "trouble_sleeping", "value": "2"},
+            ],
+        },
+        {
+            "id": "5",
+            "title": "Adopt a Healthy Diet",
+            "description": "Eating a balanced diet can help regulate your mood, improve your energy levels, and enhance your overall health. Consider consulting a nutritionist to create a diet plan that suits your lifestyle and preferences.",
+            "icon": "IconCarrot",
+            "url": "https://www.nutrition.gov/topics/basic-nutrition/healthy-eating",
+            "trigger": [
+                {"label": "overeating", "value": "2"},
+                {"label": "bmi", "value": ">25"},
+            ],
+        },
+        {
+            "id": "6",
+            "title": "Cultivate Social Connections",
+            "description": "Building strong, healthy relationships can help reduce feelings of loneliness and isolation. Engage in community activities, join clubs, or reach out to friends and family to strengthen your social network.",
+            "icon": "IconUsers",
+            "url": "https://www.mentalhealth.org.uk/publications/relationships-and-mental-health",
+            "trigger": [
+                {"label": "number_of_friends", "value": "<3"},
+                {"label": "feeling_sad", "value": "2"},
+            ],
+        },
+        {
+            "id": "7",
+            "title": "Practice Mindfulness and Relaxation Techniques",
+            "description": "Mindfulness, meditation, and relaxation exercises can help you manage stress, reduce anxiety, and improve your mental clarity. These practices can be integrated into your daily routine to enhance your overall well-being.",
+            "icon": "IconLeaf",
+            "url": "https://www.mindful.org/meditation/mindfulness-getting-started/",
+            "trigger": [
+                {"label": "feeling_anxious", "value": "1"},
+                {"label": "anxiousness", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "8",
+            "title": "Engage in Cognitive Behavioral Therapy (CBT)",
+            "description": "CBT is a highly effective treatment for depression, helping you to identify and challenge negative thought patterns and engage in more positive behaviors. Consider finding a licensed therapist who specializes in CBT.",
+            "icon": "IconBrain",
+            "url": "https://www.apa.org/ptsd-guideline/patients-and-families/cognitive-behavioral",
+            "trigger": [
+                {"label": "depression_severity", "value": "Moderate"},
+                {"label": "depression_severity", "value": "Moderately severe"},
+                {"label": "depression_severity", "value": "Severe"},
+            ],
+        },
+        {
+            "id": "9",
+            "title": "Regularly Update Your Personal Goals",
+            "description": "Setting and working towards personal goals can provide a sense of purpose and direction, which is important for mental health. Ensure your goals are realistic, measurable, and time-bound.",
+            "icon": "IconTarget",
+            "url": "https://www.mindtools.com/pages/article/newHTE_90.htm",
+            "trigger": [
+                {"label": "feeling_guilt", "value": "2"},
+                {"label": "feeling_guilt", "value": "3"},
+            ],
+        },
+        {
+            "id": "10",
+            "title": "Maintain a Regular Routine",
+            "description": "Keeping a consistent daily routine can improve your sense of stability and predictability, which can be comforting when feeling depressed. Try to maintain regular times for eating, sleeping, working, and socializing.",
+            "icon": "IconCalendar",
+            "url": "https://www.verywellmind.com/the-importance-of-routine-in-times-of-uncertainty-4802594",
+            "trigger": [
+                {"label": "trouble_sleeping", "value": "2"},
+                {"label": "overeating", "value": "1"},
+            ],
+        },
+        {
+            "id": "11",
+            "title": "Incorporate Physical Activity into Your Routine",
+            "description": "Exercise can be as effective as medications in treating mild to moderate depression. It also helps with anxiety, stress, and improving mood through the release of endorphins. Find activities you enjoy and aim to be active for at least 30 minutes a day.",
+            "icon": "IconRun",
+            "url": "https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm",
+            "trigger": [
+                {"label": "phq_score", "value": ">10"},
+                {"label": "feeling_sad", "value": "1"},
+            ],
+        },
+        {
+            "id": "12",
+            "title": "Prioritize Social Interaction",
+            "description": "Social support is crucial in managing symptoms of depression. Make an effort to connect with loved ones, join support groups, or participate in community activities to enhance your social network.",
+            "icon": "IconMessageCircle",
+            "url": "https://www.mentalhealth.org.uk/a-to-z/s/social-support-and-mental-health",
+            "trigger": [
+                {"label": "number_of_friends", "value": "<3"},
+                {"label": "feeling_anxious", "value": "1"},
+            ],
+        },
+        {
+            "id": "13",
+            "title": "Develop Stress Management Strategies",
+            "description": "Effective stress management can reduce the symptoms of depression. Techniques such as deep breathing exercises, progressive muscle relaxation, or practicing mindfulness can be beneficial.",
+            "icon": "IconDeviceFloppy",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relievers/art-20047257",
+            "trigger": [
+                {"label": "feeling_anxious", "value": "1"},
+                {"label": "problems_concentrating", "value": "2"},
+            ],
+        },
+        {
+            "id": "14",
+            "title": "Explore Art Therapy",
+            "description": "Art therapy can be a powerful way to express your feelings and improve mental health. It helps to explore emotions, develop self-awareness, cope with stress, and boost self-esteem.",
+            "icon": "IconPalette",
+            "url": "https://www.psychologytoday.com/us/therapy-types/art-therapy",
+            "trigger": [
+                {"label": "depression_treatment", "value": "No"},
+                {"label": "academic_challenges", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "15",
+            "title": "Establish a Mindful Eating Practice",
+            "description": "Mindful eating can help you rebuild a healthy relationship with food, focusing on the experience and enjoyment of eating, which can be beneficial if you're dealing with overeating or anxiety related to food.",
+            "icon": "IconGrillFork",
+            "url": "https://www.healthline.com/nutrition/mindful-eating-guide",
+            "trigger": [
+                {"label": "overeating", "value": "1"},
+                {"label": "overeating", "value": "2"},
+            ],
+        },
+        {
+            "id": "16",
+            "title": "Consider Journaling for Emotional Expression",
+            "description": "Journaling can be a therapeutic practice, allowing you to express thoughts and emotions, reflect on your feelings, and identify patterns in your behavior that may be contributing to your depression or anxiety.",
+            "icon": "IconNotebook",
+            "url": "https://www.psychologytoday.com/us/blog/words-matter/201812/how-journaling-can-help-you-in-hard-times",
+            "trigger": [
+                {"label": "feeling_sad", "value": "1"},
+                {"label": "feeling_guilt", "value": "2"},
+            ],
+        },
+        {
+            "id": "17",
+            "title": "Engage in Volunteering",
+            "description": "Volunteering can increase your sense of community, boost your self-esteem, and provide a sense of purpose. It can also be a way to build new relationships and combat feelings of isolation.",
+            "icon": "IconHandStop",
+            "url": "https://www.helpguide.org/articles/healthy-living/volunteering-and-its-surprising-benefits.htm",
+            "trigger": [
+                {"label": "likes_new_things", "value": "Yes"},
+                {"label": "feeling_anxious", "value": "0"},
+            ],
+        },
+        {
+            "id": "18",
+            "title": "Practice Positive Self-Affirmations",
+            "description": "Positive affirmations can help challenge and overcome self-sabotaging and negative thoughts. Repeating affirmations can encourage positive changes in your life and boost your self-esteem.",
+            "icon": "IconBulb",
+            "url": "https://www.healthline.com/health/mental-health/positive-affirmations",
+            "trigger": [
+                {"label": "problems_concentrating", "value": "1"},
+                {"label": "feeling_guilt", "value": "3"},
+            ],
+        },
+        {
+            "id": "19",
+            "title": "Create a Relaxation Routine Before Bed",
+            "description": "Developing a pre-sleep routine to relax and unwind can improve your sleep quality. Consider practices like reading, taking a warm bath, or gentle stretching to signal your body it's time to sleep.",
+            "icon": "IconBed",
+            "url": "https://www.sleepfoundation.org/sleep-hygiene/relaxation-exercises-to-help-fall-asleep",
+            "trigger": [
+                {"label": "trouble_sleeping", "value": "1"},
+                {"label": "sleepiness", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "20",
+            "title": "Learn and Practice Stress Reduction Techniques",
+            "description": "Stress can exacerbate or trigger depression and anxiety. Techniques like guided imagery, progressive muscle relaxation, or yoga can reduce stress levels and promote a sense of peace.",
+            "icon": "IconSun",
+            "url": "https://www.verywellmind.com/tips-to-reduce-stress-3145195",
+            "trigger": [
+                {"label": "feeling_anxious", "value": "1"},
+                {"label": "anxiety_severity", "value": "Moderate"},
+            ],
+        },
     ]
 
     matched_recommendations = []
@@ -66,13 +266,13 @@ def evaluate_recommendations(user_input):
             value = trigger["value"]
 
             # Handling different types of triggers
-            if '>' in value:
-                num_value = float(value.strip('>'))
+            if ">" in value:
+                num_value = float(value.strip(">"))
                 if not (label in user_input and float(user_input[label]) > num_value):
                     match = False
                 break
-            elif '<' in value:
-                num_value = float(value.strip('<'))
+            elif "<" in value:
+                num_value = float(value.strip("<"))
                 if not (label in user_input and float(user_input[label]) < num_value):
                     match = False
                 break
@@ -96,15 +296,16 @@ def result(request):
         data["bmi_category"] = categorize_bmi(data["bmi"])
         result = prediction_from_models(data)
         recommendations = evaluate_recommendations(user_input=data)
-        return JsonResponse({
-                "is_depressed": result,
-                "recommendations": recommendations
-            })  # jsonify the result
-    return render(request, "components/user_input_form.html")  # remove unnecessary "else" statement
+        return JsonResponse(
+            {"is_depressed": result, "recommendations": recommendations}
+        )  # jsonify the result
+    return render(
+        request, "components/user_input_form.html"
+    )  # remove unnecessary "else" statement
 
 
 def prediction_from_models(user_input):
-    #user_input = get_sample_user_input()
+    # user_input = get_sample_user_input()
     print("user_input given to models:", user_input)
 
     # cast the input to the correct data types
@@ -135,7 +336,7 @@ def prediction_from_models(user_input):
     if prediction_counts == 1:
         return "moderately depressed"
     elif prediction_counts == 2:
-        return "very depressed" 
+        return "very depressed"
     elif prediction_counts == 3:
         return "severely depressed"
     else:
@@ -145,7 +346,7 @@ def prediction_from_models(user_input):
 def categorize_bmi(bmi=None):
     if bmi is None:
         return "Not Available"
-    
+
     bmi = int(bmi)
 
     if bmi < 0:
@@ -164,7 +365,7 @@ def categorize_bmi(bmi=None):
         return "Class III Obesity"
     else:
         return "Not Available"
-    
+
 
 def prediction_from_model_1(user_input):
     # DataFrames with exact column names for each model
