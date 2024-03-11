@@ -350,27 +350,37 @@ type Results = {
 };
 
 const IconMapping: { [key: string]: JSX.Element } = {
-	'IconStretching': <Tabler.IconStretching className="h-4 w-4 text-neutral-500" />,
-	'IconActivityHeartbeat': <Tabler.IconActivityHeartbeat className="h-4 w-4 text-neutral-500" />,
-	'IconUserSearch': <Tabler.IconUserSearch className="h-4 w-4 text-neutral-500" />,
-	'IconMoonStars': <Tabler.IconMoonStars className="h-4 w-4 text-neutral-500" />,
-	'IconCarrot': <Tabler.IconCarrot className="h-4 w-4 text-neutral-500" />,
-	'IconUsers': <Tabler.IconUsers className="h-4 w-4 text-neutral-500" />,
-	'IconLeaf': <Tabler.IconLeaf className="h-4 w-4 text-neutral-500" />,
-	'IconBrain': <Tabler.IconBrain className="h-4 w-4 text-neutral-500" />,
-	'IconTarget': <Tabler.IconTarget className="h-4 w-4 text-neutral-500" />,
-	'IconCalendar': <Tabler.IconCalendar className="h-4 w-4 text-neutral-500" />,
-	'IconRun': <Tabler.IconRun className="h-4 w-4 text-neutral-500" />,
-	'IconMessageCircle': <Tabler.IconMessageCircle className="h-4 w-4 text-neutral-500" />,
-	'IconDeviceFloppy': <Tabler.IconDeviceFloppy className="h-4 w-4 text-neutral-500" />,
-	'IconPalette': <Tabler.IconPalette className="h-4 w-4 text-neutral-500" />,
-	'IconGrillFork': <Tabler.IconGrillFork className="h-4 w-4 text-neutral-500" />,
-	'IconNotebook': <Tabler.IconNotebook className="h-4 w-4 text-neutral-500" />,
-	'IconHandStop': <Tabler.IconHandStop className="h-4 w-4 text-neutral-500" />,
-	'IconBulb': <Tabler.IconBulb className="h-4 w-4 text-neutral-500" />,
-	'IconBed': <Tabler.IconBed className="h-4 w-4 text-neutral-500" />,
-	'IconSun': <Tabler.IconSun className="h-4 w-4 text-neutral-500" />,
-}
+	IconStretching: (
+		<Tabler.IconStretching className="h-4 w-4 text-neutral-500" />
+	),
+	IconActivityHeartbeat: (
+		<Tabler.IconActivityHeartbeat className="h-4 w-4 text-neutral-500" />
+	),
+	IconUserSearch: (
+		<Tabler.IconUserSearch className="h-4 w-4 text-neutral-500" />
+	),
+	IconMoonStars: <Tabler.IconMoonStars className="h-4 w-4 text-neutral-500" />,
+	IconCarrot: <Tabler.IconCarrot className="h-4 w-4 text-neutral-500" />,
+	IconUsers: <Tabler.IconUsers className="h-4 w-4 text-neutral-500" />,
+	IconLeaf: <Tabler.IconLeaf className="h-4 w-4 text-neutral-500" />,
+	IconBrain: <Tabler.IconBrain className="h-4 w-4 text-neutral-500" />,
+	IconTarget: <Tabler.IconTarget className="h-4 w-4 text-neutral-500" />,
+	IconCalendar: <Tabler.IconCalendar className="h-4 w-4 text-neutral-500" />,
+	IconRun: <Tabler.IconRun className="h-4 w-4 text-neutral-500" />,
+	IconMessageCircle: (
+		<Tabler.IconMessageCircle className="h-4 w-4 text-neutral-500" />
+	),
+	IconDeviceFloppy: (
+		<Tabler.IconDeviceFloppy className="h-4 w-4 text-neutral-500" />
+	),
+	IconPalette: <Tabler.IconPalette className="h-4 w-4 text-neutral-500" />,
+	IconGrillFork: <Tabler.IconGrillFork className="h-4 w-4 text-neutral-500" />,
+	IconNotebook: <Tabler.IconNotebook className="h-4 w-4 text-neutral-500" />,
+	IconHandStop: <Tabler.IconHandStop className="h-4 w-4 text-neutral-500" />,
+	IconBulb: <Tabler.IconBulb className="h-4 w-4 text-neutral-500" />,
+	IconBed: <Tabler.IconBed className="h-4 w-4 text-neutral-500" />,
+	IconSun: <Tabler.IconSun className="h-4 w-4 text-neutral-500" />,
+};
 
 const ShowResults = ({
 	verdict,
@@ -480,14 +490,33 @@ export default function Home() {
 					>
 						<div className="flex items-center justify-center w-full">
 							<h1 className="text-3xl font-bold text-center mt-10">
-								{data.is_depressed && data.is_depressed === "depressed"
-									? "You don't seem to be doing so well"
-									: "We're glad to know you are doing well!"}
+								{(() => {
+									let message;
+
+									switch (data.is_depressed) {
+										case "0":
+											message = "[0/3] You're in great spirits!";
+											break;
+										case "1":
+											message = "[1/3] You seem a bit down";
+											break;
+										case "2":
+											message = "[2/3] It looks like you're feeling low";
+											break;
+										case "3":
+											message = "[3/3] You don't seem to be doing so well";
+											break;
+										default:
+											message = "We're glad to know you are doing well!";
+											break;
+									}
+									return message;
+								})()}
 							</h1>
 						</div>
 						<div>
 							<h3 className="text-center mt-1">
-								Consider these tips to help you with your journey
+								Consider these tips to help you with your mental health
 							</h3>
 						</div>
 					</motion.div>

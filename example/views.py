@@ -334,13 +334,13 @@ def prediction_from_models(user_input):
     all_predictions = model_1_prediction + model_2_prediction + model_3_prediction
     prediction_counts = sum(all_predictions)
     if prediction_counts == 1:
-        return "moderately depressed"
+        return "1"
     elif prediction_counts == 2:
-        return "very depressed"
+        return "2"
     elif prediction_counts == 3:
-        return "severely depressed"
+        return "3"
     else:
-        return "not depressed"
+        return "0"
 
 
 def categorize_bmi(bmi=None):
