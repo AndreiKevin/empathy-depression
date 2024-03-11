@@ -108,9 +108,15 @@ def prediction_from_models(user_input):
     print(model_1_prediction, model_2_prediction, model_3_prediction)
 
     all_predictions = model_1_prediction + model_2_prediction + model_3_prediction
-    prediction_counts = Counter(all_predictions)
-    majority_class = max(prediction_counts, key=prediction_counts.get)
-    return "depressed" if majority_class == 1 else "not depressed"
+    prediction_counts = sum(all_predictions)
+    if prediction_counts == 1:
+        return "moderately depressed"
+    elif prediction_counts == 2:
+        return "very depressed" 
+    elif prediction_counts == 3:
+        return "severely depressed"
+    else:
+        return "not depressed"
 
 
 def categorize_bmi(bmi=None):

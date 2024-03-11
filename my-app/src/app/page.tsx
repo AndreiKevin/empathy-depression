@@ -411,7 +411,7 @@ const ShowResults = ({
 	setSelectedId: (id: string) => void;
 }) => {
 	return (
-		<BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+		<BentoGrid className="max-w-4xl mx-auto">
 			{items.map((item) => (
 				<motion.div
 					key={item?.id}
@@ -422,7 +422,7 @@ const ShowResults = ({
 						title={item.title}
 						description={item.description}
 						header={item.header}
-						className={item.className}
+						className={item.className && "border border-gray"}
 						icon={item.icon}
 						url={item.url}
 					/>
