@@ -2,10 +2,18 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { CardStack, Card } from "@/components/ui/card-stack";
 import { cn } from "@/lib/utils/cn";
 import { motion } from "framer-motion";
+
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { CardStack, Card } from "@/components/ui/card-stack";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import {
+	IconClipboardCopy,
+	IconFileBroken,
+	IconSignature,
+	IconTableColumn,
+} from "@tabler/icons-react";
 
 export const Highlight = ({
 	children,
@@ -332,12 +340,64 @@ const CARDS: Card[] = [
 <label for="anxietySeverityMild">Mild</label><br />
 */
 
-type Recommendation = { id: string; title: string; subtitle: string };
+type Recommendation = {
+	id: string;
+	title: string;
+	description: string;
+	header: JSX.Element;
+	className: string;
+	icon: JSX.Element;
+	url: string;
+};
 
 type Results = {
 	is_depressed: string;
 	recommendations: Recommendation[];
-}
+};
+
+const Skeleton = () => (
+	<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+);
+
+const testItems = [
+	{
+		id: "1",
+		title: "The Dawn of Innovation",
+		description: "Explore the birth of groundbreaking ideas and inventions.",
+		header: <Skeleton />,
+		className: "md:col-span-2",
+		icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+		url: "https://www.google.com",
+	},
+	{
+		id: "2",
+		title: "The Digital Revolution",
+		description: "Dive into the transformative power of technology.",
+		header: <Skeleton />,
+		className: "md:col-span-1",
+		icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+		url: "https://www.google.com",
+	},
+	{
+		id: "3",
+		title: "The Art of Design",
+		description: "Discover the beauty of thoughtful and functional design.",
+		header: <Skeleton />,
+		className: "md:col-span-1",
+		icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+		url: "https://www.google.com",
+	},
+	{
+		id: "4",
+		title: "The Power of Communication",
+		description:
+			"Understand the impact of effective communication in our lives.",
+		header: <Skeleton />,
+		className: "md:col-span-2",
+		icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+		url: "https://www.google.com",
+	},
+];
 
 const ShowResults = ({
 	verdict,
@@ -351,29 +411,38 @@ const ShowResults = ({
 	setSelectedId: (id: string) => void;
 }) => {
 	return (
-		<>
+		<BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
 			{items.map((item) => (
 				<motion.div
 					key={item?.id}
 					layoutId={item?.id}
-					onClick={() =>
-						setSelectedId(item?.id)
-					}
+					onClick={() => setSelectedId(item?.id)}
 				>
-					<motion.h5>
+					<BentoGridItem
+						title={item.title}
+						description={item.description}
+						header={item.header}
+						className={item.className}
+						icon={item.icon}
+						url={item.url}
+					/>
+					{/* <motion.h5>
 						{item?.subtitle}
 					</motion.h5>
 					<motion.h2>
 						{item?.title}
-					</motion.h2>
+					</motion.h2> */}
 				</motion.div>
 			))}
-		</>
+		</BentoGrid>
 	);
 };
 
 export default function Home() {
-	const [data, setData] = useState<Results>({ is_depressed: "", recommendations: [] });
+	const [data, setData] = useState<Results>({
+		is_depressed: "",
+		recommendations: [],
+	});
 	const [selectedId, setSelectedId] = useState<string>("0");
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -398,16 +467,29 @@ export default function Home() {
 
 	return (
 		<div className="">
-			<form className="h-[40rem] flex items-center justify-center w-full">
-				<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
-			</form>
+			{!isSubmitted && (
+				<form className="h-[40rem] flex items-center justify-center w-full">
+					<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
+				</form>
+			)}
 			{isSubmitted && data && (
-				<ShowResults
-					verdict={data.is_depressed}
-					items={data.recommendations}
-					selectedId={selectedId}
-					setSelectedId={setSelectedId}
-				/>
+				<>
+					<div className="flex items-center justify-center w-full">
+						<h1 className="text-3xl font-bold text-center mt-10">
+							{data.is_depressed === "depressed"
+								? "You don't seem to be doing so well. Maybe thse can help you."
+								: "We're glad to know you are doing well!"}
+						</h1>
+					</div>
+					<div className="mt-10 w-full">
+						<ShowResults
+							verdict={data.is_depressed}
+							items={testItems}
+							selectedId={selectedId}
+							setSelectedId={setSelectedId}
+						/>
+					</div>
+				</>
 			)}
 			{/*<BackgroundBeams />*/}
 		</div>
