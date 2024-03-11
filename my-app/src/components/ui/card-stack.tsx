@@ -121,7 +121,7 @@ export const CardStack = ({
 									transformOrigin: "top center",
 								}}
 								animate={{
-									left: index * -CARD_OFFSET,
+									bottom: index * -CARD_OFFSET,
 									zIndex: cards.length - index, //  decrease z-index for the cards that are behind
 								}}
 							>

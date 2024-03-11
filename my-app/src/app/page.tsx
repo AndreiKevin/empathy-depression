@@ -466,21 +466,52 @@ export default function Home() {
 	};
 
 	return (
-		<div className="">
+		<>
 			{!isSubmitted && (
-				<form className="h-[40rem] flex items-center justify-center w-full">
-					<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
-				</form>
+				<>
+					<motion.div
+						initial={{ opacity: 0 }} // Add opacity: 0 to initial state
+						animate={{ opacity: 1 }} // Add opacity: 1 to animate state
+						transition={{ duration: 1 }} // Add delay: 0.5 to the transition object
+						className=""
+					>
+						<div className="flex items-center justify-center w-full">
+							<h1 className="text-3xl font-bold text-center mt-10">
+								Welcome to the Mental Health Assessment Tool
+							</h1>
+						</div>
+						<div>
+							<h3 className="text-center mt-1">Answer all the cards below</h3>
+						</div>
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0 }} // Add opacity: 0 to initial state
+						animate={{ opacity: 1 }} // Add opacity: 1 to animate state
+						transition={{ duration: 2, delay: 1.5 }} // Add delay: 1 to the transition object
+						className=""
+					>
+						<form className="mt-20 flex items-center justify-center w-full">
+							<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
+						</form>
+					</motion.div>
+				</>
 			)}
 			{isSubmitted && data && (
 				<>
-					<div className="flex items-center justify-center w-full">
-						<h1 className="text-3xl font-bold text-center mt-10">
-							{data.is_depressed === "depressed"
-								? "You don't seem to be doing so well. Maybe thse can help you."
-								: "We're glad to know you are doing well!"}
-						</h1>
-					</div>
+					<motion.div
+						initial={{ opacity: 0 }} // Add opacity: 0 to initial state
+						animate={{ opacity: 1 }} // Add opacity: 1 to animate state
+						transition={{ duration: 1 }} // Add delay: 0.5 to the transition object
+						className=""
+					>
+						<div className="flex items-center justify-center w-full">
+							<h1 className="text-3xl font-bold text-center mt-10">
+								{data.is_depressed && data.is_depressed === "depressed"
+									? "You don't seem to be doing so well. Maybe these can help you."
+									: "We're glad to know you are doing well!"}
+							</h1>
+						</div>
+					</motion.div>
 					<div className="mt-10 w-full">
 						<ShowResults
 							verdict={data.is_depressed}
@@ -492,6 +523,6 @@ export default function Home() {
 				</>
 			)}
 			{/*<BackgroundBeams />*/}
-		</div>
+		</>
 	);
 }
