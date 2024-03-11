@@ -30,6 +30,39 @@ def index(request):
     return render(request, "components/user_input_form.html")
 
 
+def get_recommendations(result):
+    if result == "depressed":
+        return [
+            {
+                "title": "Get enough sleep",
+                "subtitle": "Getting enough sleep is important for your mental health"
+            },
+            {
+                "title": "Eat healthy",
+                "subtitle": "Eating healthy is important for your mental health"
+            },
+            {
+                "title": "Exercise",
+                "subtitle": "Exercising is important for your mental health"
+            },
+            {
+                "title": "Seek help",
+                "subtitle": "Seeking help is important for your mental health"
+            },
+            {
+                "title": "Talk to someone",
+                "subtitle": "Talking to someone is important for your mental health"
+            }
+        ]
+    else:
+        return [
+            {
+                "title": "Maintaining your mental health",
+                "subtitle": "Eat healthy, exercise, and get enough sleep"
+            },
+        ]
+
+
 # Backend
 @csrf_exempt
 def result(request):
@@ -39,7 +72,11 @@ def result(request):
         print("received data:", data)
         data["bmi_category"] = categorize_bmi(data["bmi"])
         result = prediction_from_models(data)
-        return JsonResponse({"is_depressed": result})  # jsonify the result
+        recommendations = get_recommendations(result)
+        return JsonResponse({
+                "is_depressed": result,
+                "recommendations": recommendations
+            })  # jsonify the result
     return render(request, "components/user_input_form.html")  # remove unnecessary "else" statement
 
 

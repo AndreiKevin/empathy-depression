@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { CardStack, Card } from "@/components/ui/card-stack";
 import { cn } from "@/lib/utils/cn";
+import { motion } from "framer-motion";
 
 export const Highlight = ({
 	children,
@@ -25,148 +26,178 @@ export const Highlight = ({
 	);
 };
 
-const CARDS:Card[] = [
-    {
-        id: 1,
-        question: "Gender",
-        inputType: "radio",
-        feature_name: "gender",
-        options: [{label: "Male", value: "Male"}, {label: "Female", value: "Female"}],
-		done: false
-    },
-    {
-        id: 2,
-        question: "Age",
-        inputType: "number",
-        feature_name: "age",
-		done: false
-    },
-    {
-        id: 3,
-        question: "School Year",
-        inputType: "radio",
-        feature_name: "school_year",
-        options: [
-            {label: "1", value: "1"}, 
-            {label: "2", value: "2"}, 
-            {label: "3", value: "3"}, 
-            {label: "4", value: "4"}
-        ],
-		done: false
-    },
-    {
-        id: 4,
-        question: "Sleep Hours",
-        inputType: "number",
-        feature_name: "sleep_hours",
-		done: false
-    },
-    {
-        id: 5,
-        question: "Number of Friends",
-        inputType: "number",
-        feature_name: "number_of_friends",
-		done: false
-    },
-    {
-        id: 6,
-        question: "PHQ Score",
-        inputType: "number",
-        feature_name: "phq_score",
-		done: false
-    },
-    {
-        id: 7,
-        question: "GAD Score",
-        inputType: "number",
-        feature_name: "gad_score",
-		done: false
-    },
-    {
-        id: 8,
-        question: "Epworth Score",
-        inputType: "number",
-        feature_name: "epworth_score",
-		done: false
-    },
-    {
-        id: 9,
-        question: "BMI",
-        inputType: "number",
-        feature_name: "bmi",
-		done: false
-    },
-    {
-        id: 10,
-        question: "Depressiveness",
-        inputType: "radio",
-        feature_name: "depressiveness",
-        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
-    },
-    {
-        id: 11,
-        question: "Suicidal",
-        inputType: "radio",
-        feature_name: "suicidal",
-        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
-    },
-    {
-        id: 12,
-        question: "Depression Treatment",
-        inputType: "radio",
-        feature_name: "depression_treatment",
-        options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
-    },
+const CARDS: Card[] = [
+	{
+		id: 1,
+		question: "Gender",
+		inputType: "radio",
+		feature_name: "gender",
+		options: [
+			{ label: "Male", value: "Male" },
+			{ label: "Female", value: "Female" },
+		],
+		done: false,
+	},
+	{
+		id: 2,
+		question: "Age",
+		inputType: "number",
+		feature_name: "age",
+		done: false,
+	},
+	{
+		id: 3,
+		question: "School Year",
+		inputType: "radio",
+		feature_name: "school_year",
+		options: [
+			{ label: "1", value: "1" },
+			{ label: "2", value: "2" },
+			{ label: "3", value: "3" },
+			{ label: "4", value: "4" },
+		],
+		done: false,
+	},
+	{
+		id: 4,
+		question: "Sleep Hours",
+		inputType: "number",
+		feature_name: "sleep_hours",
+		done: false,
+	},
+	{
+		id: 5,
+		question: "Number of Friends",
+		inputType: "number",
+		feature_name: "number_of_friends",
+		done: false,
+	},
+	{
+		id: 6,
+		question: "PHQ Score",
+		inputType: "number",
+		feature_name: "phq_score",
+		done: false,
+	},
+	{
+		id: 7,
+		question: "GAD Score",
+		inputType: "number",
+		feature_name: "gad_score",
+		done: false,
+	},
+	{
+		id: 8,
+		question: "Epworth Score",
+		inputType: "number",
+		feature_name: "epworth_score",
+		done: false,
+	},
+	{
+		id: 9,
+		question: "BMI",
+		inputType: "number",
+		feature_name: "bmi",
+		done: false,
+	},
+	{
+		id: 10,
+		question: "Depressiveness",
+		inputType: "radio",
+		feature_name: "depressiveness",
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
+	},
+	{
+		id: 11,
+		question: "Suicidal",
+		inputType: "radio",
+		feature_name: "suicidal",
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
+	},
+	{
+		id: 12,
+		question: "Depression Treatment",
+		inputType: "radio",
+		feature_name: "depression_treatment",
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
+	},
 	{
 		id: 13,
 		question: "Anxiousness",
 		inputType: "radio",
 		feature_name: "anxiousness",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
 	},
 	{
 		id: 14,
 		question: "Anxiety Diagnosis",
 		inputType: "radio",
 		feature_name: "anxiety_diagnosis",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
 	},
 	{
 		id: 15,
 		question: "Anxiety Treatment",
 		inputType: "radio",
 		feature_name: "anxiety_treatment",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
 	},
 	{
 		id: 16,
 		question: "Sleepiness",
 		inputType: "radio",
 		feature_name: "sleepiness",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
 	},
 	{
 		id: 17,
 		question: "Likes Presentations",
 		inputType: "radio",
 		feature_name: "likes_presentations",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
 	},
 	{
 		id: 18,
 		question: "Likes New Things",
 		inputType: "radio",
 		feature_name: "likes_new_things",
-		options: [{label: "Yes", value: "Yes"}, {label: "No", value: "No"}],
-		done: false
+		options: [
+			{ label: "Yes", value: "Yes" },
+			{ label: "No", value: "No" },
+		],
+		done: false,
 	},
 	{
 		id: 19,
@@ -174,10 +205,10 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "feeling_anxious",
 		options: [
-			{label: "Often/Always", value: "1"}, 
-			{label: "Rarely/Sometimes", value: "0"}
+			{ label: "Often/Always", value: "1" },
+			{ label: "Rarely/Sometimes", value: "0" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 20,
@@ -185,12 +216,12 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "depression_severity",
 		options: [
-			{label: "None/Minimal", value: "None-minimal"}, 
-			{label: "Moderate", value: "Moderate"}, 
-			{label: "Moderately severe", value: "Moderately severe"}, 
-			{label: "Severe", value: "Severe"}
+			{ label: "None/Minimal", value: "None-minimal" },
+			{ label: "Moderate", value: "Moderate" },
+			{ label: "Moderately severe", value: "Moderately severe" },
+			{ label: "Severe", value: "Severe" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 21,
@@ -198,12 +229,12 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "anxiety_severity",
 		options: [
-			{label: "Mild", value: "Mild"}, 
-			{label: "Moderate", value: "Moderate"}, 
-			{label: "None-minimal", value: "None-minimal"}, 
-			{label: "Severe", value: "Severe"}
+			{ label: "Mild", value: "Mild" },
+			{ label: "Moderate", value: "Moderate" },
+			{ label: "None-minimal", value: "None-minimal" },
+			{ label: "Severe", value: "Severe" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 22,
@@ -211,10 +242,10 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "note_taking",
 		options: [
-			{label: "Rarely/Sometimes", value: "Sometimes"}, 
-			{label: "Often/Always", value: "Always"}
+			{ label: "Rarely/Sometimes", value: "Sometimes" },
+			{ label: "Often/Always", value: "Always" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 23,
@@ -222,10 +253,10 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "academic_challenges",
 		options: [
-			{label: "Rarely/Sometimes", value: "No"}, 
-			{label: "Often/Always", value: "Yes"}
+			{ label: "Rarely/Sometimes", value: "No" },
+			{ label: "Often/Always", value: "Yes" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 24,
@@ -233,11 +264,11 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "feeling_sad",
 		options: [
-			{label: "Rarely/Sometimes", value: "0"}, 
-			{label: "Often", value: "1"}, 
-			{label: "Always", value: "2"}
+			{ label: "Rarely/Sometimes", value: "0" },
+			{ label: "Often", value: "1" },
+			{ label: "Always", value: "2" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 25,
@@ -245,11 +276,11 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "trouble_sleeping",
 		options: [
-			{label: "Rarely", value: "0"}, 
-			{label: "Sometimes", value: "1"}, 
-			{label: "Often", value: "2"}
+			{ label: "Rarely", value: "0" },
+			{ label: "Sometimes", value: "1" },
+			{ label: "Often", value: "2" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 26,
@@ -257,11 +288,11 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "overeating",
 		options: [
-			{label: "Rarely", value: "0"}, 
-			{label: "Sometimes", value: "1"}, 
-			{label: "Often", value: "2"}
+			{ label: "Rarely", value: "0" },
+			{ label: "Sometimes", value: "1" },
+			{ label: "Often", value: "2" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 27,
@@ -269,12 +300,12 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "feeling_guilt",
 		options: [
-			{label: "Rarely", value: "0"}, 
-			{label: "Sometimes", value: "1"}, 
-			{label: "Often", value: "2"}, 
-			{label: "Always", value: "3"}
+			{ label: "Rarely", value: "0" },
+			{ label: "Sometimes", value: "1" },
+			{ label: "Often", value: "2" },
+			{ label: "Always", value: "3" },
 		],
-		done: false
+		done: false,
 	},
 	{
 		id: 28,
@@ -282,13 +313,13 @@ const CARDS:Card[] = [
 		inputType: "radio",
 		feature_name: "problems_concentrating",
 		options: [
-			{label: "Rarely", value: "0"}, 
-			{label: "Sometimes", value: "1"}, 
-			{label: "Often", value: "2"}, 
-			{label: "Always", value: "3"}
+			{ label: "Rarely", value: "0" },
+			{ label: "Sometimes", value: "1" },
+			{ label: "Often", value: "2" },
+			{ label: "Always", value: "3" },
 		],
-		done: false
-	}	
+		done: false,
+	},
 ];
 
 /*
@@ -301,27 +332,83 @@ const CARDS:Card[] = [
 <label for="anxietySeverityMild">Mild</label><br />
 */
 
-const onCardSubmit = (formData: any) => {
-	console.log("Form Data: ", formData);
-	// Post formData to an API endpoint
-	fetch("http://127.0.0.1:8000/result/", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(formData),
-	})
-		.then((response) => response.json())
-		.then((data) => console.log(data))
-		.catch((error) => console.error("Error:", error));
+type Recommendation = { id: string; title: string; subtitle: string };
+
+type Results = {
+	is_depressed: string;
+	recommendations: Recommendation[];
+}
+
+const ShowResults = ({
+	verdict,
+	items,
+	selectedId,
+	setSelectedId,
+}: {
+	verdict: string;
+	items: Recommendation[];
+	selectedId: string;
+	setSelectedId: (id: string) => void;
+}) => {
+	return (
+		<>
+			{items.map((item) => (
+				<motion.div
+					key={item?.id}
+					layoutId={item?.id}
+					onClick={() =>
+						setSelectedId(item?.id)
+					}
+				>
+					<motion.h5>
+						{item?.subtitle}
+					</motion.h5>
+					<motion.h2>
+						{item?.title}
+					</motion.h2>
+				</motion.div>
+			))}
+		</>
+	);
 };
 
 export default function Home() {
+	const [data, setData] = useState<Results>({ is_depressed: "", recommendations: [] });
+	const [selectedId, setSelectedId] = useState<string>("0");
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
+	const onCardSubmit = (formData: any) => {
+		console.log("Form Data: ", formData);
+		// Post formData to an API endpoint
+		fetch("http://127.0.0.1:8000/result/", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(formData),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data);
+				setData(data);
+				setIsSubmitted(true);
+			})
+			.catch((error) => console.error("Error:", error));
+	};
+
 	return (
 		<div className="">
 			<form className="h-[40rem] flex items-center justify-center w-full">
 				<CardStack items={CARDS} onCardSubmit={onCardSubmit} />
 			</form>
+			{isSubmitted && data && (
+				<ShowResults
+					verdict={data.is_depressed}
+					items={data.recommendations}
+					selectedId={selectedId}
+					setSelectedId={setSelectedId}
+				/>
+			)}
 			{/*<BackgroundBeams />*/}
 		</div>
 	);
