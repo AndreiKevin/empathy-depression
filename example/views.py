@@ -30,37 +30,60 @@ def index(request):
     return render(request, "components/user_input_form.html")
 
 
-def get_recommendations(result):
-    if result == "depressed":
-        return [
-            {
-                "title": "Get enough sleep",
-                "subtitle": "Getting enough sleep is important for your mental health"
-            },
-            {
-                "title": "Eat healthy",
-                "subtitle": "Eating healthy is important for your mental health"
-            },
-            {
-                "title": "Exercise",
-                "subtitle": "Exercising is important for your mental health"
-            },
-            {
-                "title": "Seek help",
-                "subtitle": "Seeking help is important for your mental health"
-            },
-            {
-                "title": "Talk to someone",
-                "subtitle": "Talking to someone is important for your mental health"
-            }
-        ]
-    else:
-        return [
-            {
-                "title": "Maintaining your mental health",
-                "subtitle": "Eat healthy, exercise, and get enough sleep"
-            },
-        ]
+def evaluate_recommendations(user_input):
+    recommendations = [
+        {
+            "id": "1",
+            "title": "Master Stress Management",
+            "description": "Learn and practice stress management techniques such as mindfulness, meditation, or yoga to improve your mental health and enhance your overall well-being.",
+            "icon": "IconTableColumn",
+            "url": "https://www.google.com/",
+            "trigger": [
+                {"label": "feeling_anxious", "value": "1"},
+                {"label": "phq_score", "value": ">10"}
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Engage in Regular Exercise",
+            "description": "Regular physical activity can significantly improve your mental health, reduce anxiety and depression levels, and elevate your mood. Aim for at least 30 minutes of moderate exercise most days of the week.",
+            "icon": "IconTableColumn",
+            "url": "https://www.google.com/",
+            "trigger": [
+                {"label": "bmi", "value": ">25"},
+                {"label": "depressiveness", "value": "Yes"}
+            ]
+        },
+        # Add the rest of the recommendations following the same structure.
+    ]
+
+    matched_recommendations = []
+
+    for recommendation in recommendations:
+        match = True
+        for trigger in recommendation["trigger"]:
+            label = trigger["label"]
+            value = trigger["value"]
+
+            # Handling different types of triggers
+            if '>' in value:
+                num_value = float(value.strip('>'))
+                if not (label in user_input and float(user_input[label]) > num_value):
+                    match = False
+                break
+            elif '<' in value:
+                num_value = float(value.strip('<'))
+                if not (label in user_input and float(user_input[label]) < num_value):
+                    match = False
+                break
+            else:
+                if not (label in user_input and user_input[label] == value):
+                    match = False
+
+        if match:
+            matched_recommendations.append(recommendation)
+
+    return matched_recommendations
 
 
 # Backend
@@ -72,7 +95,7 @@ def result(request):
         print("received data:", data)
         data["bmi_category"] = categorize_bmi(data["bmi"])
         result = prediction_from_models(data)
-        recommendations = get_recommendations(result)
+        recommendations = evaluate_recommendations(user_input=data)
         return JsonResponse({
                 "is_depressed": result,
                 "recommendations": recommendations

@@ -1,0 +1,348 @@
+[
+    {
+        "feature_name": "gender",
+        "options": [
+            {
+                "label": "Male",
+                "value": "Male"
+            },
+            {
+                "label": "Female",
+                "value": "Female"
+            }
+        ]
+    },
+    {
+        "feature_name": "age"
+    },
+    {
+        "feature_name": "school_year",
+        "options": [
+            {
+                "label": "1",
+                "value": "1"
+            },
+            {
+                "label": "2",
+                "value": "2"
+            },
+            {
+                "label": "3",
+                "value": "3"
+            },
+            {
+                "label": "4",
+                "value": "4"
+            }
+        ]
+    },
+    {
+        "feature_name": "sleep_hours"
+    },
+    {
+        "feature_name": "number_of_friends"
+    },
+    {
+        "feature_name": "phq_score"
+    },
+    {
+        "feature_name": "gad_score"
+    },
+    {
+        "feature_name": "epworth_score"
+    },
+    {
+        "feature_name": "bmi"
+    },
+    {
+        "feature_name": "depressiveness",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "suicidal",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "depression_treatment",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "anxiousness",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "anxiety_diagnosis",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "anxiety_treatment",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "sleepiness",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "likes_presentations",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "likes_new_things",
+        "options": [
+            {
+                "label": "Yes",
+                "value": "Yes"
+            },
+            {
+                "label": "No",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "feature_name": "feeling_anxious",
+        "options": [
+            {
+                "label": "Often/Always",
+                "value": "1"
+            },
+            {
+                "label": "Rarely/Sometimes",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "feature_name": "depression_severity",
+        "options": [
+            {
+                "label": "None/Minimal",
+                "value": "None-minimal"
+            },
+            {
+                "label": "Moderate",
+                "value": "Moderate"
+            },
+            {
+                "label": "Moderately severe",
+                "value": "Moderately severe"
+            },
+            {
+                "label": "Severe",
+                "value": "Severe"
+            }
+        ]
+    },
+    {
+        "feature_name": "anxiety_severity",
+        "options": [
+            {
+                "label": "Mild",
+                "value": "Mild"
+            },
+            {
+                "label": "Moderate",
+                "value": "Moderate"
+            },
+            {
+                "label": "None-minimal",
+                "value": "None-minimal"
+            },
+            {
+                "label": "Severe",
+                "value": "Severe"
+            }
+        ]
+    },
+    {
+        "feature_name": "note_taking",
+        "options": [
+            {
+                "label": "Rarely/Sometimes",
+                "value": "Sometimes"
+            },
+            {
+                "label": "Often/Always",
+                "value": "Always"
+            }
+        ]
+    },
+    {
+        "feature_name": "academic_challenges",
+        "options": [
+            {
+                "label": "Rarely/Sometimes",
+                "value": "No"
+            },
+            {
+                "label": "Often/Always",
+                "value": "Yes"
+            }
+        ]
+    },
+    {
+        "feature_name": "feeling_sad",
+        "options": [
+            {
+                "label": "Rarely/Sometimes",
+                "value": "0"
+            },
+            {
+                "label": "Often",
+                "value": "1"
+            },
+            {
+                "label": "Always",
+                "value": "2"
+            }
+        ]
+    },
+    {
+        "feature_name": "trouble_sleeping",
+        "options": [
+            {
+                "label": "Rarely",
+                "value": "0"
+            },
+            {
+                "label": "Sometimes",
+                "value": "1"
+            },
+            {
+                "label": "Often",
+                "value": "2"
+            }
+        ]
+    },
+    {
+        "feature_name": "overeating",
+        "options": [
+            {
+                "label": "Rarely",
+                "value": "0"
+            },
+            {
+                "label": "Sometimes",
+                "value": "1"
+            },
+            {
+                "label": "Often",
+                "value": "2"
+            }
+        ]
+    },
+    {
+        "feature_name": "feeling_guilt",
+        "options": [
+            {
+                "label": "Rarely",
+                "value": "0"
+            },
+            {
+                "label": "Sometimes",
+                "value": "1"
+            },
+            {
+                "label": "Often",
+                "value": "2"
+            },
+            {
+                "label": "Always",
+                "value": "3"
+            }
+        ]
+    },
+    {
+        "feature_name": "problems_concentrating",
+        "options": [
+            {
+                "label": "Rarely",
+                "value": "0"
+            },
+            {
+                "label": "Sometimes",
+                "value": "1"
+            },
+            {
+                "label": "Often",
+                "value": "2"
+            },
+            {
+                "label": "Always",
+                "value": "3"
+            }
+        ]
+    }
+]

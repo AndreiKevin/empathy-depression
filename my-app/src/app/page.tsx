@@ -341,13 +341,12 @@ const CARDS: Card[] = [
 */
 
 type Recommendation = {
-	id: string;
-	title: string;
-	description: string;
-	header: JSX.Element;
-	className: string;
-	icon: JSX.Element;
-	url: string;
+	id: string; // dont mind this
+	title: string; // title of the recommendation
+	description: string; // full description of the recommendation
+	icon: string; // choose from https://tabler-icons-react.vercel.app/
+	url: string; // url to the webpage source of this recommendation
+	trigger: { label: string; value: string }[]; // array of all questions that trigger to recommend this
 };
 
 type Results = {
@@ -355,49 +354,9 @@ type Results = {
 	recommendations: Recommendation[];
 };
 
-const Skeleton = () => (
-	<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
-);
-
-const testItems = [
-	{
-		id: "1",
-		title: "The Dawn of Innovation",
-		description: "Explore the birth of groundbreaking ideas and inventions.",
-		header: <Skeleton />,
-		className: "md:col-span-2",
-		icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-		url: "https://www.google.com",
-	},
-	{
-		id: "2",
-		title: "The Digital Revolution",
-		description: "Dive into the transformative power of technology.",
-		header: <Skeleton />,
-		className: "md:col-span-1",
-		icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-		url: "https://www.google.com",
-	},
-	{
-		id: "3",
-		title: "The Art of Design",
-		description: "Discover the beauty of thoughtful and functional design.",
-		header: <Skeleton />,
-		className: "md:col-span-1",
-		icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-		url: "https://www.google.com",
-	},
-	{
-		id: "4",
-		title: "The Power of Communication",
-		description:
-			"Understand the impact of effective communication in our lives.",
-		header: <Skeleton />,
-		className: "md:col-span-2",
-		icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-		url: "https://www.google.com",
-	},
-];
+const IconMapping: { [key: string]: JSX.Element } = {
+	'IconTableColumn': <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+}
 
 const ShowResults = ({
 	verdict,
@@ -421,9 +380,8 @@ const ShowResults = ({
 					<BentoGridItem
 						title={item.title}
 						description={item.description}
-						header={item.header}
-						className={item.className && "border border-gray"}
-						icon={item.icon}
+						className={"border border-gray"}
+						icon={IconMapping[item.icon]}
 						url={item.url}
 					/>
 					{/* <motion.h5>
@@ -528,7 +486,7 @@ export default function Home() {
 						<div className="mt-10 w-full">
 							<ShowResults
 								verdict={data.is_depressed}
-								items={testItems}
+								items={data.recommendations}
 								selectedId={selectedId}
 								setSelectedId={setSelectedId}
 							/>
