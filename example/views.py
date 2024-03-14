@@ -129,7 +129,7 @@ def evaluate_recommendations(user_input):
             "title": "Regularly Update Your Personal Goals",
             "description": "Setting and working towards personal goals can provide a sense of purpose and direction, which is important for mental health. Ensure your goals are realistic, measurable, and time-bound.",
             "icon": "IconTarget",
-            "url": "https://www.mindtools.com/pages/article/newHTE_90.htm",
+            "url": "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/purpose-and-mental-health",
             "trigger": [
                 {"label": "feeling_guilt", "value": "2"},
                 {"label": "feeling_guilt", "value": "3"},
@@ -140,7 +140,7 @@ def evaluate_recommendations(user_input):
             "title": "Maintain a Regular Routine",
             "description": "Keeping a consistent daily routine can improve your sense of stability and predictability, which can be comforting when feeling depressed. Try to maintain regular times for eating, sleeping, working, and socializing.",
             "icon": "IconCalendar",
-            "url": "https://www.verywellmind.com/the-importance-of-routine-in-times-of-uncertainty-4802594",
+            "url": "https://mhanational.org/blog/7-tips-keeping-routine-your-wellness",
             "trigger": [
                 {"label": "trouble_sleeping", "value": "2"},
                 {"label": "overeating", "value": "1"},
@@ -151,7 +151,7 @@ def evaluate_recommendations(user_input):
             "title": "Incorporate Physical Activity into Your Routine",
             "description": "Exercise can be as effective as medications in treating mild to moderate depression. It also helps with anxiety, stress, and improving mood through the release of endorphins. Find activities you enjoy and aim to be active for at least 30 minutes a day.",
             "icon": "IconRun",
-            "url": "https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/exercise-and-stress/art-20044469",
             "trigger": [
                 {"label": "phq_score", "value": ">10"},
                 {"label": "feeling_sad", "value": "1"},
@@ -163,7 +163,7 @@ def evaluate_recommendations(user_input):
             "title": "Prioritize Social Interaction",
             "description": "Social support is crucial in managing symptoms of depression. Make an effort to connect with loved ones, join support groups, or participate in community activities to enhance your social network.",
             "icon": "IconMessageCircle",
-            "url": "https://www.mentalhealth.org.uk/a-to-z/s/social-support-and-mental-health",
+            "url": "https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-minute-the-benefits-of-being-socially-connected/",
             "trigger": [
                 {"label": "number_of_friends", "value": "<3"},
                 {"label": "feeling_anxious", "value": "1"},
@@ -174,7 +174,7 @@ def evaluate_recommendations(user_input):
             "title": "Develop Stress Management Strategies",
             "description": "Effective stress management can reduce the symptoms of depression. Techniques such as deep breathing exercises, progressive muscle relaxation, or practicing mindfulness can be beneficial.",
             "icon": "IconDeviceFloppy",
-            "url": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relievers/art-20047257",
+            "url": "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/5-tips-to-manage-stress",
             "trigger": [
                 {"label": "feeling_anxious", "value": "1"},
                 {"label": "problems_concentrating", "value": "2"},
@@ -185,7 +185,7 @@ def evaluate_recommendations(user_input):
             "title": "Explore Art Therapy",
             "description": "Art therapy can be a powerful way to express your feelings and improve mental health. It helps to explore emotions, develop self-awareness, cope with stress, and boost self-esteem.",
             "icon": "IconPalette",
-            "url": "https://www.psychologytoday.com/us/therapy-types/art-therapy",
+            "url": "https://mcpress.mayoclinic.org/living-well/the-intersection-of-art-and-health-how-art-can-help-promote-well-being/",
             "trigger": [
                 {"label": "depression_treatment", "value": "No"},
                 {"label": "academic_challenges", "value": "Yes"},
@@ -196,7 +196,7 @@ def evaluate_recommendations(user_input):
             "title": "Establish a Mindful Eating Practice",
             "description": "Mindful eating can help you rebuild a healthy relationship with food, focusing on the experience and enjoyment of eating, which can be beneficial if you're dealing with overeating or anxiety related to food.",
             "icon": "IconGrillFork",
-            "url": "https://www.healthline.com/nutrition/mindful-eating-guide",
+            "url": "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/fuel-for-your-mind",
             "trigger": [
                 {"label": "overeating", "value": "1"},
                 {"label": "overeating", "value": "2"},
@@ -218,7 +218,7 @@ def evaluate_recommendations(user_input):
             "title": "Engage in Volunteering",
             "description": "Volunteering can increase your sense of community, boost your self-esteem, and provide a sense of purpose. It can also be a way to build new relationships and combat feelings of isolation.",
             "icon": "IconHandStop",
-            "url": "https://www.helpguide.org/articles/healthy-living/volunteering-and-its-surprising-benefits.htm",
+            "url": "https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentID=4552&ContentTypeID=1",
             "trigger": [
                 {"label": "likes_new_things", "value": "Yes"},
                 {"label": "feeling_anxious", "value": "1"},
@@ -229,7 +229,7 @@ def evaluate_recommendations(user_input):
             "title": "Practice Positive Self-Affirmations",
             "description": "Positive affirmations can help challenge and overcome self-sabotaging and negative thoughts. Repeating affirmations can encourage positive changes in your life and boost your self-esteem.",
             "icon": "IconBulb",
-            "url": "https://www.healthline.com/health/mental-health/positive-affirmations",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/positive-thinking/art-20043950",
             "trigger": [
                 {"label": "problems_concentrating", "value": "1"},
                 {"label": "feeling_guilt", "value": "3"},
@@ -240,7 +240,7 @@ def evaluate_recommendations(user_input):
             "title": "Create a Relaxation Routine Before Bed",
             "description": "Developing a pre-sleep routine to relax and unwind can improve your sleep quality. Consider practices like reading, taking a warm bath, or gentle stretching to signal your body it's time to sleep.",
             "icon": "IconBedOff",
-            "url": "https://www.sleepfoundation.org/sleep-hygiene/relaxation-exercises-to-help-fall-asleep",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/sleep/art-20048379",
             "trigger": [
                 {"label": "trouble_sleeping", "value": "1"},
                 {"label": "sleepiness", "value": "Yes"},
@@ -251,7 +251,7 @@ def evaluate_recommendations(user_input):
             "title": "Learn and Practice Stress Reduction Techniques",
             "description": "Stress can exacerbate or trigger depression and anxiety. Techniques like guided imagery, progressive muscle relaxation, or yoga can reduce stress levels and promote a sense of peace.",
             "icon": "IconSun",
-            "url": "https://www.verywellmind.com/tips-to-reduce-stress-3145195",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relievers/art-20047257",
             "trigger": [
                 {"label": "feeling_anxious", "value": "1"},
                 {"label": "anxiety_severity", "value": "Moderate"},
@@ -264,7 +264,7 @@ def evaluate_recommendations(user_input):
             "title": "Enhance Academic Skills",
             "description": "Improving your academic skills, such as time management, note-taking, and effective studying, can reduce academic stress and enhance your learning experience. Consider workshops or online resources to develop these skills.",
             "icon": "IconSchool",
-            "url": "https://www.educationcorner.com/study-skills-guide.html",
+            "url": "https://isminc.com/advisory/publications/the-source/understanding-impact-mental-health-academic-performance",
             "trigger": [
                 {"label": "academic_challenges", "value": "Yes"},
                 {"label": "note_taking", "value": "Sometimes"},
@@ -275,7 +275,7 @@ def evaluate_recommendations(user_input):
             "title": "Explore New Interests",
             "description": "Engaging in new hobbies or interests can boost your mental health, provide a sense of achievement, and reduce feelings of anxiety or depression. Consider trying something new that excites or challenges you.",
             "icon": "IconBallBasketball",
-            "url": "https://www.psychologytoday.com/us/blog/what-mentally-strong-people-dont-do/201504/7-reasons-why-everyone-should-take-up-hobby",
+            "url": "https://extension.usu.edu/mentalhealth/articles/how-hobbies-improve-mental-health",
             "trigger": [
                 {"label": "likes_new_things", "value": "No"},
                 {"label": "likes_presentations", "value": "No"},
@@ -286,7 +286,7 @@ def evaluate_recommendations(user_input):
             "title": "Adjust Your Study Environment",
             "description": "Creating a study environment that promotes concentration and minimizes distractions can enhance your learning efficiency and academic performance. Consider organizing your study space, using noise-canceling headphones, or studying during quieter times.",
             "icon": "IconLayout",
-            "url": "https://www.oxfordlearning.com/tips-for-creating-study-space/",
+            "url": "https://www.verywellmind.com/how-your-environment-affects-your-mental-health-5093687",
             "trigger": [
                 {"label": "problems_concentrating", "value": "2"},
                 {"label": "problems_concentrating", "value": "3"},
@@ -297,7 +297,7 @@ def evaluate_recommendations(user_input):
             "title": "Regular Medical Check-ups",
             "description": "Regular check-ups can help find potential health issues before they become a problem. Early detection gives you the best chance for getting the right treatment quickly, avoiding any complications.",
             "icon": "IconReportMedical",
-            "url": "https://www.healthline.com/health/annual-physical-examinations",
+            "url": "https://www.betterhealth.vic.gov.au/health/servicesandsupport/regular-health-checks",
             "trigger": [
                 {"label": "anxiety_treatment", "value": "Yes"},
                 {"label": "depression_treatment", "value": "Yes"},
