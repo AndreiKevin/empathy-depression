@@ -77,28 +77,28 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 6,
-		question: "PHQ Score",
+		question: "PHQ Score (0 if not applicable)",
 		inputType: "number",
 		feature_name: "phq_score",
 		done: false,
 	},
 	{
 		id: 7,
-		question: "GAD Score",
+		question: "GAD Score (0 if not applicable)",
 		inputType: "number",
 		feature_name: "gad_score",
 		done: false,
 	},
 	{
 		id: 8,
-		question: "Epworth Score",
+		question: "Epworth Score (0 if not applicable)",
 		inputType: "number",
 		feature_name: "epworth_score",
 		done: false,
 	},
 	{
 		id: 9,
-		question: "BMI",
+		question: "BMI (0 if not applicable)",
 		inputType: "number",
 		feature_name: "bmi",
 		done: false,
@@ -554,7 +554,7 @@ export default function Home() {
 					<div className="mt-32 w-full"/>
 				</>
 			)}
-			{<BackgroundBeams />}
+			{/*<BackgroundBeams />*/}
 		</>
 	);
 }
