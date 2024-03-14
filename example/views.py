@@ -37,7 +37,7 @@ def evaluate_recommendations(user_input):
             "title": "Master Stress Management",
             "description": "Learn and practice stress management techniques such as mindfulness, meditation, or yoga to improve your mental health and enhance your overall well-being.",
             "icon": "IconActivityHeartbeat",
-            "url": "https://www.google.com/",
+            "url": "https://www.mayoclinic.org/tests-procedures/stress-management/about/pac-20384898",
             "trigger": [
                 {"label": "feeling_anxious", "value": "1"},
                 {"label": "phq_score", "value": ">10"},
@@ -48,7 +48,7 @@ def evaluate_recommendations(user_input):
             "title": "Engage in Regular Exercise",
             "description": "Regular physical activity can significantly improve your mental health, reduce anxiety and depression levels, and elevate your mood. Aim for at least 30 minutes of moderate exercise most days of the week.",
             "icon": "IconStretching",
-            "url": "https://www.google.com/",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389",
             "trigger": [
                 {"label": "bmi", "value": ">25"},
                 {"label": "depressiveness", "value": "Yes"},
@@ -59,7 +59,7 @@ def evaluate_recommendations(user_input):
             "title": "Seek Professional Mental Health Support",
             "description": "If you're experiencing signs of depressiveness, anxiety, or suicidal thoughts, it's important to seek help from a mental health professional. They can offer guidance, therapy, and sometimes medication to help you manage your mental health effectively.",
             "icon": "IconUserSearch",
-            "url": "https://www.mentalhealth.gov/get-help/immediate-help",
+            "url": "https://www.mayoclinic.org/diseases-conditions/mental-illness/in-depth/mental-health-providers/art-20045530",
             "trigger": [
                 {"label": "depressiveness", "value": "Yes"},
                 {"label": "suicidal", "value": "Yes"},
@@ -71,7 +71,7 @@ def evaluate_recommendations(user_input):
             "title": "Improve Your Sleep Hygiene",
             "description": "Good sleep is crucial for mental health. Develop a bedtime routine, limit screen time before bed, and create a comfortable sleep environment. Consider seeking professional advice if you frequently have trouble sleeping.",
             "icon": "IconMoon",
-            "url": "https://www.sleepfoundation.org/sleep-hygiene",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/sleep/art-20048379",
             "trigger": [
                 {"label": "sleep_hours", "value": "<7"},
                 {"label": "epworth_score", "value": ">10"},
@@ -83,7 +83,7 @@ def evaluate_recommendations(user_input):
             "title": "Adopt a Healthy Diet",
             "description": "Eating a balanced diet can help regulate your mood, improve your energy levels, and enhance your overall health. Consider consulting a nutritionist to create a diet plan that suits your lifestyle and preferences.",
             "icon": "IconCarrot",
-            "url": "https://www.nutrition.gov/topics/basic-nutrition/healthy-eating",
+            "url": "https://www.mind.org.uk/information-support/tips-for-everyday-living/food-and-mental-health/#:~:text=Diets%20higher%20in%20protein%20can,regulate%20your%20thoughts%20and%20feelings.",
             "trigger": [
                 {"label": "overeating", "value": "2"},
                 {"label": "bmi", "value": ">25"},
@@ -94,7 +94,7 @@ def evaluate_recommendations(user_input):
             "title": "Cultivate Social Connections",
             "description": "Building strong, healthy relationships can help reduce feelings of loneliness and isolation. Engage in community activities, join clubs, or reach out to friends and family to strengthen your social network.",
             "icon": "IconUsers",
-            "url": "https://www.mentalhealth.org.uk/publications/relationships-and-mental-health",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/friendships/art-20044860",
             "trigger": [
                 {"label": "number_of_friends", "value": "<3"},
                 {"label": "feeling_sad", "value": "1"},
@@ -106,7 +106,7 @@ def evaluate_recommendations(user_input):
             "title": "Practice Mindfulness and Relaxation Techniques",
             "description": "Mindfulness, meditation, and relaxation exercises can help you manage stress, reduce anxiety, and improve your mental clarity. These practices can be integrated into your daily routine to enhance your overall well-being.",
             "icon": "IconLeaf",
-            "url": "https://www.mindful.org/meditation/mindfulness-getting-started/",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/consumer-health/in-depth/mindfulness-exercises/art-20046356#:~:text=Sit%20comfortably%20with%20your%20back,your%20focus%20to%20your%20breath.",
             "trigger": [
                 {"label": "feeling_anxious", "value": "1"},
                 {"label": "anxiousness", "value": "Yes"},
@@ -117,7 +117,7 @@ def evaluate_recommendations(user_input):
             "title": "Engage in Cognitive Behavioral Therapy (CBT)",
             "description": "CBT is a highly effective treatment for depression, helping you to identify and challenge negative thought patterns and engage in more positive behaviors. Consider finding a licensed therapist who specializes in CBT.",
             "icon": "IconBrain",
-            "url": "https://www.apa.org/ptsd-guideline/patients-and-families/cognitive-behavioral",
+            "url": "https://www.mayoclinic.org/tests-procedures/cognitive-behavioral-therapy/about/pac-20384610",
             "trigger": [
                 {"label": "depression_severity", "value": "Moderate"},
                 {"label": "depression_severity", "value": "Moderately severe"},
