@@ -378,8 +378,24 @@ const IconMapping: { [key: string]: JSX.Element } = {
 	IconNotebook: <Tabler.IconNotebook className="h-4 w-4 text-neutral-500" />,
 	IconHandStop: <Tabler.IconHandStop className="h-4 w-4 text-neutral-500" />,
 	IconBulb: <Tabler.IconBulb className="h-4 w-4 text-neutral-500" />,
-	IconBed: <Tabler.IconBed className="h-4 w-4 text-neutral-500" />,
+	IconBedOff: <Tabler.IconBedOff className="h-4 w-4 text-neutral-500" />,
 	IconSun: <Tabler.IconSun className="h-4 w-4 text-neutral-500" />,
+	IconBook: <Tabler.IconBook className="h-4 w-4 text-neutral-500" />,
+	IconSchool: <Tabler.IconSchool className="h-4 w-4 text-neutral-500" />,
+	IconBallBasketball: <Tabler.IconBallBasketball className="h-4 w-4 text-neutral-500" />,
+	IconLayout: <Tabler.IconLayout className="h-4 w-4 text-neutral-500" />,
+	IconReportMedical: <Tabler.IconReportMedical className="h-4 w-4 text-neutral-500" />,
+	IconWind: <Tabler.IconWind className="h-4 w-4 text-neutral-500" />,
+	IconHomeHeart: <Tabler.IconHomeHeart className="h-4 w-4 text-neutral-500" />,
+	IconHealthRecoginition: <Tabler.IconHealthRecognition className="h-4 w-4 text-neutral-500" />,
+	IconBellSchool: <Tabler.IconBellSchool className="h-4 w-4 text-neutral-500" />,
+	IconZoomQuestion: <Tabler.IconZoomQuestion className="h-4 w-4 text-neutral-500" />,
+	IconPuzzle: <Tabler.IconPuzzle className="h-4 w-4 text-neutral-500" />,
+	IconMicrophone: <Tabler.IconMicrophone className="h-4 w-4 text-neutral-500" />,
+	IconShieldCheck: <Tabler.IconShieldCheck className="h-4 w-4 text-neutral-500" />,
+	IconAccessible: <Tabler.IconAccessible className="h-4 w-4 text-neutral-500" />,
+	IconGrowth: <Tabler.IconGrowth className="h-4 w-4 text-neutral-500" />,
+	IconFish: <Tabler.IconFish className="h-4 w-4 text-neutral-500" />,
 };
 
 const ShowResults = ({
@@ -535,9 +551,10 @@ export default function Home() {
 							/>
 						</div>
 					</motion.div>
+					<div className="mt-32 w-full"/>
 				</>
 			)}
-			{/*<BackgroundBeams />*/}
+			{<BackgroundBeams />}
 		</>
 	);
 }

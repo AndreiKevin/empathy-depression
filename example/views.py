@@ -97,6 +97,7 @@ def evaluate_recommendations(user_input):
             "url": "https://www.mentalhealth.org.uk/publications/relationships-and-mental-health",
             "trigger": [
                 {"label": "number_of_friends", "value": "<3"},
+                {"label": "feeling_sad", "value": "1"},
                 {"label": "feeling_sad", "value": "2"},
             ],
         },
@@ -154,6 +155,7 @@ def evaluate_recommendations(user_input):
             "trigger": [
                 {"label": "phq_score", "value": ">10"},
                 {"label": "feeling_sad", "value": "1"},
+                {"label": "feeling_sad", "value": "2"},
             ],
         },
         {
@@ -219,7 +221,7 @@ def evaluate_recommendations(user_input):
             "url": "https://www.helpguide.org/articles/healthy-living/volunteering-and-its-surprising-benefits.htm",
             "trigger": [
                 {"label": "likes_new_things", "value": "Yes"},
-                {"label": "feeling_anxious", "value": "0"},
+                {"label": "feeling_anxious", "value": "1"},
             ],
         },
         {
@@ -237,7 +239,7 @@ def evaluate_recommendations(user_input):
             "id": "19",
             "title": "Create a Relaxation Routine Before Bed",
             "description": "Developing a pre-sleep routine to relax and unwind can improve your sleep quality. Consider practices like reading, taking a warm bath, or gentle stretching to signal your body it's time to sleep.",
-            "icon": "IconBed",
+            "icon": "IconBedOff",
             "url": "https://www.sleepfoundation.org/sleep-hygiene/relaxation-exercises-to-help-fall-asleep",
             "trigger": [
                 {"label": "trouble_sleeping", "value": "1"},
@@ -253,6 +255,158 @@ def evaluate_recommendations(user_input):
             "trigger": [
                 {"label": "feeling_anxious", "value": "1"},
                 {"label": "anxiety_severity", "value": "Moderate"},
+                {"label": "anxiety_severity", "value": "Mild"},
+                {"label": "anxiety_severity", "value": "Severe"},
+            ],
+        },
+        {
+            "id": "21",
+            "title": "Enhance Academic Skills",
+            "description": "Improving your academic skills, such as time management, note-taking, and effective studying, can reduce academic stress and enhance your learning experience. Consider workshops or online resources to develop these skills.",
+            "icon": "IconSchool",
+            "url": "https://www.educationcorner.com/study-skills-guide.html",
+            "trigger": [
+                {"label": "academic_challenges", "value": "Yes"},
+                {"label": "note_taking", "value": "Sometimes"},
+            ],
+        },
+        {
+            "id": "22",
+            "title": "Explore New Interests",
+            "description": "Engaging in new hobbies or interests can boost your mental health, provide a sense of achievement, and reduce feelings of anxiety or depression. Consider trying something new that excites or challenges you.",
+            "icon": "IconBallBasketball",
+            "url": "https://www.psychologytoday.com/us/blog/what-mentally-strong-people-dont-do/201504/7-reasons-why-everyone-should-take-up-hobby",
+            "trigger": [
+                {"label": "likes_new_things", "value": "No"},
+                {"label": "likes_presentations", "value": "No"},
+            ],
+        },
+        {
+            "id": "23",
+            "title": "Adjust Your Study Environment",
+            "description": "Creating a study environment that promotes concentration and minimizes distractions can enhance your learning efficiency and academic performance. Consider organizing your study space, using noise-canceling headphones, or studying during quieter times.",
+            "icon": "IconLayout",
+            "url": "https://www.oxfordlearning.com/tips-for-creating-study-space/",
+            "trigger": [
+                {"label": "problems_concentrating", "value": "2"},
+                {"label": "problems_concentrating", "value": "3"},
+            ],
+        },
+        {
+            "id": "24",
+            "title": "Regular Medical Check-ups",
+            "description": "Regular check-ups can help find potential health issues before they become a problem. Early detection gives you the best chance for getting the right treatment quickly, avoiding any complications.",
+            "icon": "IconReportMedical",
+            "url": "https://www.healthline.com/health/annual-physical-examinations",
+            "trigger": [
+                {"label": "anxiety_treatment", "value": "Yes"},
+                {"label": "depression_treatment", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "25",
+            "title": "Mindful Breathing Exercises",
+            "description": "Mindful breathing exercises can help reduce stress, improve your focus, and calm your mind. Practice breathing techniques daily, focusing on slow, deep breaths to help manage anxiety and improve mental clarity.",
+            "icon": "IconWind",
+            "url": "https://www.mindful.org/a-five-minute-breathing-meditation/",
+            "trigger": [
+                {"label": "feeling_anxious", "value": "Often/Always"},
+                {"label": "anxiety_severity", "value": "Mild"},
+            ],
+        },
+        {
+            "id": "26",
+            "title": "Participate in Support Groups",
+            "description": "Joining a support group can provide a sense of belonging, reduce feelings of isolation, and offer a space to share experiences and coping strategies with others facing similar challenges.",
+            "icon": "IconHomeHeart",
+            "url": "https://www.verywellmind.com/benefits-of-joining-a-support-group-4842335",
+            "trigger": [
+                {"label": "suicidal", "value": "Yes"},
+                {"label": "anxiety_diagnosis", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "27",
+            "title": "Regular Mental Health Screenings",
+            "description": "Regular mental health check-ups can help detect issues early and provide a clear picture of your mental health over time. It's advisable to undergo screenings, especially if you have a history or risk factors of mental health conditions.",
+            "icon": "IconHealthRecoginition",
+            "url": "https://www.nimh.nih.gov/health/topics/mental-health-screening",
+            "trigger": [
+                {"label": "gad_score", "value": ">5"},
+                {"label": "age", "value": ">18"},
+            ],
+        },
+        {
+            "id": "28",
+            "title": "Active Learning Strategies",
+            "description": "Engaging actively with your learning material can improve comprehension and retention. Try methods like summarizing information, teaching others, or applying concepts to practical situations to deepen your understanding.",
+            "icon": "IconBellSchool",
+            "url": "https://www.cmu.edu/teaching/designteach/teach/instructionalstrategies/activelearning.html",
+            "trigger": [
+                {"label": "likes_presentations", "value": "No"},
+                {"label": "school_year", "value": "2"},
+            ],
+        },
+        {
+            "id": "29",
+            "title": "Encourage Curiosity and Exploration",
+            "description": "Fostering a sense of curiosity can enhance your mental flexibility and creativity. Encourage yourself to explore new hobbies, learn new skills, or simply try new experiences to stimulate your mind and broaden your horizons.",
+            "icon": "IconZoomQuestion",
+            "url": "https://www.psychologytoday.com/us/blog/curious/201412/the-benefits-cultivating-curiosity",
+            "trigger": [{"label": "likes_new_things", "value": "No"}],
+        },
+        {
+            "id": "30",
+            "title": "Structured Problem-Solving Techniques",
+            "description": "Learning structured problem-solving techniques can help you manage life's challenges more effectively. This skill can reduce the stress associated with academic or personal problems by providing a clear framework for finding solutions.",
+            "icon": "IconPuzzle",
+            "url": "https://www.mindtools.com/pages/article/newTMC_00.htm",
+            "trigger": [{"label": "problems_concentrating", "value": "3"}],
+        },
+        {
+            "id": "31",
+            "title": "Participate in Public Speaking Workshops",
+            "description": "Public speaking is a valuable skill that can enhance your self-confidence and communication abilities. Workshops or local groups can provide a supportive environment to practice and improve your public speaking skills.",
+            "icon": "IconMicrophone",
+            "url": "https://www.toastmasters.org/",
+            "trigger": [{"label": "likes_presentations", "value": "No"}],
+        },
+        {
+            "id": "32",
+            "title": "Develop Emotional Resilience",
+            "description": "Building emotional resilience can help you navigate stressful situations and bounce back from setbacks. Techniques like cognitive reframing, building optimism, and maintaining social connections can strengthen your resilience.",
+            "icon": "IconShieldCheck",
+            "url": "https://www.apa.org/topics/resilience",
+            "trigger": [{"label": "feeling_sad", "value": "2"}],
+        },
+        {
+            "id": "33",
+            "title": "Engage in Mind-Body Practices",
+            "description": "Mind-body practices like yoga, tai chi, or qigong can improve your physical health, reduce stress, and enhance your mental clarity. These practices combine physical movement, mental focus, and deep breathing to promote overall well-being.",
+            "icon": "IconAccessible",
+            "url": "https://www.nccih.nih.gov/health/mindbody-practices",
+            "trigger": [{"label": "bmi", "value": ">24"}],
+        },
+        {
+            "id": "34",
+            "title": "Cultivate a Growth Mindset",
+            "description": "Adopting a growth mindset can significantly enhance your personal and academic growth. Embrace challenges, persist in the face of setbacks, and see effort as a path to mastery. This mindset can lead to a love for learning and resilience.",
+            "icon": "IconGrowth",
+            "url": "https://www.mindsetworks.com/science/",
+            "trigger": [
+                {"label": "likes_new_things", "value": "No"},
+                {"label": "academic_challenges", "value": "Yes"},
+            ],
+        },
+        {
+            "id": "35",
+            "title": "Integrate Brain-Boosting Foods into Your Diet",
+            "description": "Incorporating foods rich in omega-3 fatty acids, antioxidants, and vitamins can support brain health, improve memory, and reduce the risk of cognitive decline. Consider adding foods like fish, berries, nuts, and leafy greens to your diet.",
+            "icon": "IconFish",
+            "url": "https://www.health.harvard.edu/mind-and-mood/foods-linked-to-better-brainpower",
+            "trigger": [
+                {"label": "bmi", "value": "<18"},
+                {"label": "bmi", "value": "18-25"},
             ],
         },
     ]
