@@ -478,6 +478,20 @@ def prediction_from_models(user_input):
     user_input["feeling_guilt"] = int(user_input["feeling_guilt"])
     user_input["problems_concentrating"] = int(user_input["problems_concentrating"])
 
+    # If any of the fields are missing, use the average
+    if user_input["phq_score"] == 0:
+        user_input["phq_score"] = 7
+        print("phq_score is 0, using average")
+    if user_input["gad_score"] == 0:
+        user_input["gad_score"] = 7
+        print("gad_score is 0, using average")
+    if user_input["epworth_score"] == 0:
+        user_input["epworth_score"] = 6
+        print("epworth_score is 0, using average")
+    if user_input["bmi"] == 0:
+        user_input["bmi"] = 23
+        print("bmi is 0, using average")
+
     model_1_prediction = prediction_from_model_1(user_input)
     model_2_prediction = prediction_from_model_2(user_input)
     # https://www.kaggle.com/datasets/parvezalmuqtadir2348/postpartum-depression
