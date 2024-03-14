@@ -14,6 +14,11 @@ python -m venv myworld
 ```
 
 2. Django Frontend Setup: Activate the venv 
+
+# Windows:
+.\myworld\Scripts\activate
+
+# Unix/MacOS:
 ```bash
 source .venv/bin/activate 
 ```
