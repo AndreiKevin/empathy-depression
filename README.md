@@ -27,6 +27,7 @@ pip install -r requirements.txt
 ```bash
 python manage.py runserver
 ```
+Note: Make sure the Django server runs on http://127.0.0.1:8000/
 
 5. NextJS Frontend Setup: Change directory to the frontend
 ```bash
