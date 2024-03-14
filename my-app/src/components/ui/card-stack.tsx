@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 
 let interval: any;
 
@@ -131,9 +132,9 @@ export const CardStack = ({
 							>
 								<div className="mt-2 mb-5 flex justify-between">
 									<h3>{card.question}</h3>
-									<div>
+									<Badge className="ml-2">
 										({cardIndex}/{items.length})
-									</div>
+									</Badge>
 								</div>
 								{renderInputField(card)}
 								<Button
