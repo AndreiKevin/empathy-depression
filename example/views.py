@@ -308,7 +308,7 @@ def evaluate_recommendations(user_input):
             "title": "Mindful Breathing Exercises",
             "description": "Mindful breathing exercises can help reduce stress, improve your focus, and calm your mind. Practice breathing techniques daily, focusing on slow, deep breaths to help manage anxiety and improve mental clarity.",
             "icon": "IconWind",
-            "url": "https://www.mindful.org/a-five-minute-breathing-meditation/",
+            "url": "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/mindfulness-meditation-improve-your-quality-of-life",
             "trigger": [
                 {"label": "feeling_anxious", "value": "Often/Always"},
                 {"label": "anxiety_severity", "value": "Mild"},
@@ -319,7 +319,7 @@ def evaluate_recommendations(user_input):
             "title": "Participate in Support Groups",
             "description": "Joining a support group can provide a sense of belonging, reduce feelings of isolation, and offer a space to share experiences and coping strategies with others facing similar challenges.",
             "icon": "IconHomeHeart",
-            "url": "https://www.verywellmind.com/benefits-of-joining-a-support-group-4842335",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/support-groups/art-20044655",
             "trigger": [
                 {"label": "suicidal", "value": "Yes"},
                 {"label": "anxiety_diagnosis", "value": "Yes"},
@@ -330,7 +330,7 @@ def evaluate_recommendations(user_input):
             "title": "Regular Mental Health Screenings",
             "description": "Regular mental health check-ups can help detect issues early and provide a clear picture of your mental health over time. It's advisable to undergo screenings, especially if you have a history or risk factors of mental health conditions.",
             "icon": "IconHealthRecoginition",
-            "url": "https://www.nimh.nih.gov/health/topics/mental-health-screening",
+            "url": "https://www.ft.com/partnercontent/mayo-clinic-healthcare/the-importance-of-preventative-medicine.html",
             "trigger": [
                 {"label": "gad_score", "value": ">5"},
                 {"label": "age", "value": ">18"},
@@ -341,7 +341,7 @@ def evaluate_recommendations(user_input):
             "title": "Active Learning Strategies",
             "description": "Engaging actively with your learning material can improve comprehension and retention. Try methods like summarizing information, teaching others, or applying concepts to practical situations to deepen your understanding.",
             "icon": "IconBellSchool",
-            "url": "https://www.cmu.edu/teaching/designteach/teach/instructionalstrategies/activelearning.html",
+            "url": "https://news.mayocliniclabs.com/2018/08/09/active-learning-connecting-teachers-and-learners/",
             "trigger": [
                 {"label": "likes_presentations", "value": "No"},
                 {"label": "school_year", "value": "2"},
@@ -352,7 +352,7 @@ def evaluate_recommendations(user_input):
             "title": "Encourage Curiosity and Exploration",
             "description": "Fostering a sense of curiosity can enhance your mental flexibility and creativity. Encourage yourself to explore new hobbies, learn new skills, or simply try new experiences to stimulate your mind and broaden your horizons.",
             "icon": "IconZoomQuestion",
-            "url": "https://www.psychologytoday.com/us/blog/curious/201412/the-benefits-cultivating-curiosity",
+            "url": "https://www.psychologytoday.com/intl/blog/beyond-mental-health/202309/the-curious-mind-a-key-to-mental-wellness",
             "trigger": [{"label": "likes_new_things", "value": "No"}],
         },
         {
@@ -360,7 +360,7 @@ def evaluate_recommendations(user_input):
             "title": "Structured Problem-Solving Techniques",
             "description": "Learning structured problem-solving techniques can help you manage life's challenges more effectively. This skill can reduce the stress associated with academic or personal problems by providing a clear framework for finding solutions.",
             "icon": "IconPuzzle",
-            "url": "https://www.mindtools.com/pages/article/newTMC_00.htm",
+            "url": "https://www.verywellmind.com/an-overview-of-problem-solving-therapy-4767991",
             "trigger": [{"label": "problems_concentrating", "value": "3"}],
         },
         {
@@ -368,7 +368,7 @@ def evaluate_recommendations(user_input):
             "title": "Participate in Public Speaking Workshops",
             "description": "Public speaking is a valuable skill that can enhance your self-confidence and communication abilities. Workshops or local groups can provide a supportive environment to practice and improve your public speaking skills.",
             "icon": "IconMicrophone",
-            "url": "https://www.toastmasters.org/",
+            "url": "https://thevividminds.com/can-public-speaking-training-improve-your-mental-health/",
             "trigger": [{"label": "likes_presentations", "value": "No"}],
         },
         {
@@ -376,7 +376,7 @@ def evaluate_recommendations(user_input):
             "title": "Develop Emotional Resilience",
             "description": "Building emotional resilience can help you navigate stressful situations and bounce back from setbacks. Techniques like cognitive reframing, building optimism, and maintaining social connections can strengthen your resilience.",
             "icon": "IconShieldCheck",
-            "url": "https://www.apa.org/topics/resilience",
+            "url": "https://www.mayoclinic.org/tests-procedures/resilience-training/about/pac-20394943",
             "trigger": [{"label": "feeling_sad", "value": "2"}],
         },
         {
@@ -384,7 +384,7 @@ def evaluate_recommendations(user_input):
             "title": "Engage in Mind-Body Practices",
             "description": "Mind-body practices like yoga, tai chi, or qigong can improve your physical health, reduce stress, and enhance your mental clarity. These practices combine physical movement, mental focus, and deep breathing to promote overall well-being.",
             "icon": "IconAccessible",
-            "url": "https://www.nccih.nih.gov/health/mindbody-practices",
+            "url": "https://www.mayoclinic.org/healthy-lifestyle/consumer-health/in-depth/mindfulness-exercises/art-20046356a",
             "trigger": [{"label": "bmi", "value": ">24"}],
         },
         {
@@ -392,7 +392,7 @@ def evaluate_recommendations(user_input):
             "title": "Cultivate a Growth Mindset",
             "description": "Adopting a growth mindset can significantly enhance your personal and academic growth. Embrace challenges, persist in the face of setbacks, and see effort as a path to mastery. This mindset can lead to a love for learning and resilience.",
             "icon": "IconGrowth",
-            "url": "https://www.mindsetworks.com/science/",
+            "url": "https://newsnetwork.mayoclinic.org/discussion/mayo-mindfulness-change-your-mind-to-grow/#:~:text=Cultivate%20a%20mindset%20for%20growth&text=Give%20your%20brain%20new%20challenges,an%20opportunity%20or%20a%20threat.",
             "trigger": [
                 {"label": "likes_new_things", "value": "No"},
                 {"label": "academic_challenges", "value": "Yes"},
@@ -403,7 +403,7 @@ def evaluate_recommendations(user_input):
             "title": "Integrate Brain-Boosting Foods into Your Diet",
             "description": "Incorporating foods rich in omega-3 fatty acids, antioxidants, and vitamins can support brain health, improve memory, and reduce the risk of cognitive decline. Consider adding foods like fish, berries, nuts, and leafy greens to your diet.",
             "icon": "IconFish",
-            "url": "https://www.health.harvard.edu/mind-and-mood/foods-linked-to-better-brainpower",
+            "url": "https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-minute-can-the-mind-diet-improve-brain-health-2/#:~:text=%22What%20it%20emphasizes%20are%20leafy,cheese%2C%20red%20meat%20and%20sweets.",
             "trigger": [
                 {"label": "bmi", "value": "<18"},
                 {"label": "bmi", "value": "18-25"},
