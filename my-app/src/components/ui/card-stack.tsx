@@ -12,7 +12,7 @@ export type Card = {
 	inputType: string;
 	feature_name: string; // name of the column in the machine learning model
 	done: boolean; // flag if the question has already been answer
-	options?: {label:string, value:string}[]; // label--displayed to the user, value--sent to the server
+	options?: { label: string; value: string }[]; // label--displayed to the user, value--sent to the server
 };
 
 export const CardStack = ({
@@ -76,22 +76,24 @@ export const CardStack = ({
 							name={card.feature_name}
 							value={option.value}
 							onChange={handleInputChange}
-						/> {option.label}
+						/>{" "}
+						{option.label}
 					</label>
-				));				
+				));
 			// Add more cases as needed for different input types
 			default:
 				return <input type="text" onChange={handleInputChange} />;
 		}
 	};
 
-	const nextCardHandler = (card:Card) => {
+	const nextCardHandler = (card: Card) => {
+		setCardIndex(cardIndex + 1);
 		if (currentCardIndex < items.length - 1) {
 			card.done = true;
 			startFlipping();
 			setCurrentCardIndex(currentCardIndex + 1);
 		} else {
-			onCardSubmit(formData); 
+			onCardSubmit(formData);
 			card.done = true;
 			startFlipping();
 			setCurrentCardIndex(currentCardIndex + 1);
@@ -107,6 +109,8 @@ export const CardStack = ({
 			return newArray;
 		});
 	};
+
+	const [cardIndex, setCardIndex] = useState(1);
 
 	return (
 		<>
@@ -125,14 +129,24 @@ export const CardStack = ({
 									zIndex: cards.length - index, //  decrease z-index for the cards that are behind
 								}}
 							>
-								<h3 className="mt-2 mb-5">{card.question}</h3>
+								<div className="mt-2 mb-5 flex justify-between">
+									<h3>{card.question}</h3>
+									<div>
+										({cardIndex}/{items.length})
+									</div>
+								</div>
 								{renderInputField(card)}
-								<Button className="mt-auto" type="button" onClick={() => nextCardHandler(card)}>
+								<Button
+									className="mt-auto"
+									type="button"
+									onClick={() => nextCardHandler(card)}
+								>
 									{currentCardIndex < items.length - 1 ? "Next" : "Submit"}
 								</Button>
 							</motion.div>
-						)}
-					})}
+						);
+					}
+				})}
 			</div>
 		</>
 	);

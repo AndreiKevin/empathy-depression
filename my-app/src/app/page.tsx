@@ -511,19 +511,19 @@ export default function Home() {
 
 									switch (data.is_depressed) {
 										case "0":
-											message = "[0/3] You're in great spirits!";
+											message = "You are doing well!";
 											break;
 										case "1":
-											message = "[1/3] You seem a bit down";
+											message = "You are doing well!";
 											break;
 										case "2":
-											message = "[2/3] It looks like you're feeling low";
+											message = "You are not doing so well...";
 											break;
 										case "3":
-											message = "[3/3] You don't seem to be doing so well";
+											message = "You are not doing so well...";
 											break;
 										default:
-											message = "We're glad to know you are doing well!";
+											message = "You are doing well!";
 											break;
 									}
 									return message;
