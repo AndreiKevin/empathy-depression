@@ -554,7 +554,7 @@ export default function Home() {
 					<div className="mt-32 w-full"/>
 				</>
 			)}
-			{/*<BackgroundBeams />*/}
+			{<BackgroundBeams />}
 		</>
 	);
 }
