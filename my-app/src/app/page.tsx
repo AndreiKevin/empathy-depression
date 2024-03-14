@@ -32,7 +32,7 @@ export const Highlight = ({
 const CARDS: Card[] = [
 	{
 		id: 1,
-		question: "Gender",
+		question: "What is your gender?",
 		inputType: "radio",
 		feature_name: "gender",
 		options: [
@@ -43,14 +43,14 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 2,
-		question: "Age",
+		question: "What is your age?",
 		inputType: "number",
 		feature_name: "age",
 		done: false,
 	},
 	{
 		id: 3,
-		question: "School Year",
+		question: "What school year are you in? (select 4 if graduated)",
 		inputType: "radio",
 		feature_name: "school_year",
 		options: [
@@ -63,49 +63,49 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 4,
-		question: "Sleep Hours",
+		question: "How many hours do you sleep?",
 		inputType: "number",
 		feature_name: "sleep_hours",
 		done: false,
 	},
 	{
 		id: 5,
-		question: "Number of Friends",
+		question: "How many friends do you have?",
 		inputType: "number",
 		feature_name: "number_of_friends",
 		done: false,
 	},
 	{
 		id: 6,
-		question: "PHQ Score (0 if not applicable)",
+		question: "What is your PHQ Score? (0 if you don't know)",
 		inputType: "number",
 		feature_name: "phq_score",
 		done: false,
 	},
 	{
 		id: 7,
-		question: "GAD Score (0 if not applicable)",
+		question: "What is your GAD Score? (0 if you don't know)",
 		inputType: "number",
 		feature_name: "gad_score",
 		done: false,
 	},
 	{
 		id: 8,
-		question: "Epworth Score (0 if not applicable)",
+		question: "What is your Epworth Score? (0 if you don't know)",
 		inputType: "number",
 		feature_name: "epworth_score",
 		done: false,
 	},
 	{
 		id: 9,
-		question: "BMI (0 if not applicable)",
+		question: "What is your BMI (0 if not applicable)",
 		inputType: "number",
 		feature_name: "bmi",
 		done: false,
 	},
 	{
 		id: 10,
-		question: "Depressiveness",
+		question: "Do you feel depressed?",
 		inputType: "radio",
 		feature_name: "depressiveness",
 		options: [
@@ -116,7 +116,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 11,
-		question: "Suicidal",
+		question: "Do you feel suicidal?",
 		inputType: "radio",
 		feature_name: "suicidal",
 		options: [
@@ -127,7 +127,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 12,
-		question: "Depression Treatment",
+		question: "Do you have any depression treatment?",
 		inputType: "radio",
 		feature_name: "depression_treatment",
 		options: [
@@ -138,7 +138,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 13,
-		question: "Anxiousness",
+		question: "Do you often feel anxious?",
 		inputType: "radio",
 		feature_name: "anxiousness",
 		options: [
@@ -149,7 +149,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 14,
-		question: "Anxiety Diagnosis",
+		question: "Have you been diagnosed with anxiety?",
 		inputType: "radio",
 		feature_name: "anxiety_diagnosis",
 		options: [
@@ -160,7 +160,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 15,
-		question: "Anxiety Treatment",
+		question: "Have you been prescribed anxiety treatments?",
 		inputType: "radio",
 		feature_name: "anxiety_treatment",
 		options: [
@@ -171,7 +171,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 16,
-		question: "Sleepiness",
+		question: "Are you often sleepy?",
 		inputType: "radio",
 		feature_name: "sleepiness",
 		options: [
@@ -182,7 +182,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 17,
-		question: "Likes Presentations",
+		question: "Do you like presentations?",
 		inputType: "radio",
 		feature_name: "likes_presentations",
 		options: [
@@ -193,7 +193,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 18,
-		question: "Likes New Things",
+		question: "Do you like new things?",
 		inputType: "radio",
 		feature_name: "likes_new_things",
 		options: [
@@ -204,7 +204,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 19,
-		question: "Feeling Anxious",
+		question: "How often are you anxious?",
 		inputType: "radio",
 		feature_name: "feeling_anxious",
 		options: [
@@ -215,7 +215,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 20,
-		question: "Depression Severity",
+		question: "What would you rate your depression severity?",
 		inputType: "radio",
 		feature_name: "depression_severity",
 		options: [
@@ -228,7 +228,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 21,
-		question: "Anxiety Severity",
+		question: "What would you rate your anxiety severity?",
 		inputType: "radio",
 		feature_name: "anxiety_severity",
 		options: [
@@ -241,7 +241,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 22,
-		question: "Note Taking",
+		question: "Do you take notes?",
 		inputType: "radio",
 		feature_name: "note_taking",
 		options: [
@@ -252,7 +252,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 23,
-		question: "Academic Challenges",
+		question: "Do you face academic challenges?",
 		inputType: "radio",
 		feature_name: "academic_challenges",
 		options: [
@@ -263,7 +263,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 24,
-		question: "Feeling Sad",
+		question: "How often do you feel sad?",
 		inputType: "radio",
 		feature_name: "feeling_sad",
 		options: [
@@ -275,7 +275,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 25,
-		question: "Trouble Sleeping",
+		question: "How often do you have trouble sleeping?",
 		inputType: "radio",
 		feature_name: "trouble_sleeping",
 		options: [
@@ -287,7 +287,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 26,
-		question: "Overeating",
+		question: "How often do you feel you are overeating?",
 		inputType: "radio",
 		feature_name: "overeating",
 		options: [
@@ -299,7 +299,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 27,
-		question: "Feeling Guilt",
+		question: "How often do you feel guilty?",
 		inputType: "radio",
 		feature_name: "feeling_guilt",
 		options: [
@@ -312,7 +312,7 @@ const CARDS: Card[] = [
 	},
 	{
 		id: 28,
-		question: "Problems Concentrating",
+		question: "How often do you have trouble concentrating?",
 		inputType: "radio",
 		feature_name: "problems_concentrating",
 		options: [
